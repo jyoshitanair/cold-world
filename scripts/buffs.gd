@@ -5,9 +5,9 @@ extends Node2D
 @onready var image_1: Sprite2D = $"image-1"
 @onready var image_2: Sprite2D = $"image-2"
 @onready var image_3: Sprite2D = $"image-3"
-@export var img1:Texture2D = preload("res://icon.svg")
-@export var img2:Texture2D = preload("res://icon.svg")
-@export var img3:Texture2D = preload("res://icon.svg")
+@export var img1:Texture2D = preload("res://assets/icon.svg")
+@export var img2:Texture2D = preload("res://assets/icon.svg")
+@export var img3:Texture2D = preload("res://assets/icon.svg")
 @onready var label_1: Label = $label1
 @onready var label_2: Label = $label2
 @onready var label_3: Label = $label3

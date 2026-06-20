@@ -11,7 +11,7 @@ var jumpMult:float = 1
 var doubleJump = true
 var jumped = false
 
-var warmth:int
+var warmth:float
 
 var speed = 300.0 * speedMult
 var jumpVelocity = -400.0 * jumpMult
@@ -26,7 +26,11 @@ func _physics_process(delta: float) -> void:
 	# determine warmth through distance
 	if (playerLeft and playerRight != null):
 		var dist = global_position.distance_to(playerRight.global_position)
-	
+		warmth = dist/200
+		var col = $warmthInd.modulate
+		col.r = warmth
+		$warmthInd.modulate = col
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta

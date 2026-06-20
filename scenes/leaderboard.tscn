@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://hfvud8xyaa3r"]
+
+[ext_resource type="Script" uid="uid://bl35w6mwu6w7" path="res://scripts/leaderboard.gd" id="1_mrg81"]
+
+[node name="Leaderboard" type="Node2D" unique_id=823480092]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1667838147]
+offset_right = 1202.0
+offset_bottom = 732.0
+color = Color(0, 0, 0, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=670886255]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 95.0
+offset_right = 1154.0
+offset_bottom = 83.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 170
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1957029422]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Position"
+
+[node name="Label2" type="Label" parent="HBoxContainer" unique_id=1612559063]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Name"
+
+[node name="Label3" type="Label" parent="HBoxContainer" unique_id=1058433859]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Score"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1348065568]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=1675226320]
+layout_mode = 2
+columns = 3
+script = ExtResource("1_mrg81")

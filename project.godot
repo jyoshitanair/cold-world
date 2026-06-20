@@ -13,12 +13,17 @@ config_version=5
 config/name="horizons"
 run/main_scene="uid://c3j6ukimtqjy3"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/icon.svg"
 
 [autoload]
 
 Manager="*uid://cfq51m4pmgg5u"
 Secrets="*uid://dix8tl1k736nx"
+SilentWolf="*uid://rx0med2jxafo"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
 
 [input]
 

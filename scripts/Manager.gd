@@ -7,11 +7,25 @@ var hot_potato = false
 var double_jump = false
 var unity = 100
 var death_count = 0 
+var player_name = "heyhey"
+var player_list = []
+var score = 0 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
+	SilentWolf.configure({
+		"api_key": Secrets.API_KEY,
+		"game_id": "coldworld",
+		"log_level": 1
+	})
+	
+	SilentWolf.configure_scores({
+		"open_scene_on_close": "res://scenes/MainPage.tscn"
+	})
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	leaderboard()
+func leaderboard() ->void: 
+	for score in Manager.score:
+		Manager.player_list.append(Manager.player_name)

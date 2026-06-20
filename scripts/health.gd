@@ -1,16 +1,20 @@
-extends TextureProgressBar
+class_name Health extends TextureProgressBar
 
-var maxHealth = 100
+@export var maxHealth = 100
 var health = maxHealth
 
 var damage = 1
-#var damageMult = Manager.warmth
 var damageMult = 1
+
+var warmthBuff = Manager.warmth
+var distBuff:float = 1
+
+var playerLeft:Player
 
 signal death
 
 func loseHealth() -> void:
-	health -= damage * damageMult
+	health -= damage * damageMult * distBuff
 	health = max(health, 0)
 	
 	create_tween().tween_property(
@@ -26,10 +30,19 @@ func loseHealth() -> void:
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Timer.start()
+	
+	for child in get_parent().get_children():
+		if child is Player:
+			if child.playerLeft:
+				playerLeft = child
+				pass
+	
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	print(.55 + playerLeft.warmth/10)
+	distBuff = min(.55 + playerLeft.warmth / 10, 1)
 	pass
 
 

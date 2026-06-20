@@ -2,6 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://b5rjtnca4eya1" path="res://assets/tileset.tres" id="1_bl13t"]
 [ext_resource type="PackedScene" uid="uid://d3duyjui5y1aj" path="res://scenes/player.tscn" id="2_bl13t"]
+[ext_resource type="PackedScene" uid="uid://12f2vv1qwhk1" path="res://scenes/health.tscn" id="3_iyx0m"]
 
 [node name="test" type="Node2D" unique_id=1335776516]
 
@@ -15,3 +16,5 @@ playerLeft = true
 
 [node name="player2" parent="." unique_id=531801267 instance=ExtResource("2_bl13t")]
 position = Vector2(614, 227)
+
+[node name="health" parent="." unique_id=157795596 instance=ExtResource("3_iyx0m")]

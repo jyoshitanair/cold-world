@@ -1,11 +1,11 @@
 extends Node
-var speed_multiplier = 100
+var speed_multiplier = 1
 var warmth = 100
 var jackpot = false
-var jump_multiplier = 100
+var jump_multiplier = 1
 var hot_potato = false
 var double_jump = false
-var unity = 100
+var unity = true
 var death_count = 0 
 var player_name = "heyhey"
 var player_list = []

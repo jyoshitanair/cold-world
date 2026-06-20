@@ -5,10 +5,10 @@ var playerRight:Player
 
 #manager vars: speedMult, jumpMult, bool: double jump, unity
 
-var speedMult:float = 1
-var jumpMult:float = 1
+var speedMult:float = Manager.speed_multiplier
+var jumpMult:float = Manager.jump_multiplier
 
-var doubleJump = true
+var doubleJump = Manager.double_jump
 var jumped = false
 
 var warmth:float
@@ -24,12 +24,20 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	# determine warmth through distance
-	if (playerLeft and playerRight != null):
-		var dist = global_position.distance_to(playerRight.global_position)
-		warmth = dist/200
-		var col = $warmthInd.modulate
-		col.r = warmth
-		$warmthInd.modulate = col
+	if (Manager.unity):
+		for child in get_parent().get_children():
+			if child is Player:
+				child.get_node("warmthInd").visible = true
+		if (playerLeft and playerRight != null):
+			var dist = global_position.distance_to(playerRight.global_position)
+			warmth = dist/200
+			var col = $warmthInd.modulate
+			col.r = warmth
+			$warmthInd.modulate = col
+	else:
+		for child in get_parent().get_children():
+			if child is Player:
+				child.get_node("warmthInd").visible = false
 		
 	# Add the gravity.
 	if not is_on_floor():

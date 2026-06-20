@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cvrcfe6w1iexn"]
+
+[ext_resource type="Script" uid="uid://vhb3lqqh87ps" path="res://scripts/text_edit.gd" id="1_t2w00"]
+
+[node name="text_edit(addpls)" type="Node2D" unique_id=776022470]
+script = ExtResource("1_t2w00")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=708187647]
+offset_right = 1196.0
+offset_bottom = 736.0
+mouse_filter = 1
+
+[node name="TextEdit" type="TextEdit" parent="." unique_id=241516757]
+offset_left = 173.0
+offset_top = 292.0
+offset_right = 738.0
+offset_bottom = 348.0
+
+[node name="Label" type="Label" parent="." unique_id=700803301]
+offset_left = 168.0
+offset_top = 229.0
+offset_right = 724.0
+offset_bottom = 494.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "NAMEE"
+
+[node name="Button" type="Button" parent="." unique_id=1008098217]
+offset_left = 176.0
+offset_top = 402.0
+offset_right = 343.0
+offset_bottom = 453.0
+text = "ok mam"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

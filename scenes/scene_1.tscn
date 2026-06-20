@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://c3j6ukimtqjy3"]
 
-[ext_resource type="Script" uid="uid://b37kl2gpdb6ie" path="res://player_1.gd" id="1_3sd7o"]
-[ext_resource type="Texture2D" uid="uid://luq258vtismx" path="res://icon.svg" id="2_3xosi"]
-[ext_resource type="Script" uid="uid://bs7kf8rq1vvln" path="res://player_2.gd" id="3_1abo5"]
+[ext_resource type="Script" uid="uid://b37kl2gpdb6ie" path="res://scripts/player_1.gd" id="1_3sd7o"]
+[ext_resource type="Texture2D" uid="uid://luq258vtismx" path="res://assets/icon.svg" id="2_3xosi"]
+[ext_resource type="Script" uid="uid://bs7kf8rq1vvln" path="res://scripts/player_2.gd" id="3_1abo5"]
+[ext_resource type="PackedScene" uid="uid://df8xgge2wjrcb" path="res://scenes/tileset-tb-copied!.tscn" id="4_sj5te"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cefh6"]
 radius = 38.0
@@ -39,3 +40,5 @@ texture = ExtResource("2_3xosi")
 offset_top = -100.0
 offset_right = 4.0
 offset_bottom = -73.0
+
+[node name="TilesetTbCopied!" parent="." unique_id=1682306031 instance=ExtResource("4_sj5te")]

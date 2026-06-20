@@ -10,18 +10,19 @@ offset_right = 1196.0
 offset_bottom = 736.0
 mouse_filter = 1
 
-[node name="TextEdit" type="TextEdit" parent="." unique_id=241516757]
+[node name="TextEdit" type="LineEdit" parent="." unique_id=1981778816]
 offset_left = 173.0
 offset_top = 292.0
 offset_right = 738.0
 offset_bottom = 348.0
 placeholder_text = "enter ya name here"
+max_length = 10
 
 [node name="Label" type="Label" parent="." unique_id=700803301]
 offset_left = 168.0
-offset_top = 229.0
+offset_top = 206.0
 offset_right = 724.0
-offset_bottom = 494.0
+offset_bottom = 270.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "NAMEE"
@@ -32,5 +33,15 @@ offset_top = 402.0
 offset_right = 343.0
 offset_bottom = 453.0
 text = "ok mam"
+
+[node name="fail" type="Label" parent="." unique_id=1058589016]
+visible = false
+offset_left = 155.0
+offset_top = 62.0
+offset_right = 227.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0.69983983, 0.00042672723, 0.7126105, 1)
+theme_override_font_sizes/font_size = 30
+text = "u fail"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

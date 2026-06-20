@@ -112,6 +112,18 @@ offset_bottom = 420.0
 theme_override_font_sizes/font_size = 24
 text = "text"
 
+[node name="Label" type="Label" parent="label1" unique_id=1585446540]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 202.0
+offset_bottom = 193.0
+text = "loreum leurekljskjf s
+l
+jfkjadfkjkjfk
+;jfkjakdfjdjf ;al
+klajd
+kfjaskdlfj kdljfkasjd"
+
 [node name="label2" type="Label" parent="." unique_id=1421955891]
 offset_left = 476.0
 offset_top = 362.0
@@ -120,6 +132,18 @@ offset_bottom = 415.0
 theme_override_font_sizes/font_size = 24
 text = "text"
 
+[node name="Label" type="Label" parent="label2" unique_id=247333988]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 202.0
+offset_bottom = 193.0
+text = "loreum leurekljskjf s
+l
+jfkjadfkjkjfk
+;jfkjakdfjdjf ;al
+klajd
+kfjaskdlfj kdljfkasjd"
+
 [node name="label3" type="Label" parent="." unique_id=888252751]
 offset_left = 852.0
 offset_top = 365.0
@@ -127,6 +151,18 @@ offset_right = 1068.0
 offset_bottom = 418.0
 theme_override_font_sizes/font_size = 24
 text = "text"
+
+[node name="Label" type="Label" parent="label3" unique_id=1040774164]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 202.0
+offset_bottom = 193.0
+text = "loreum leurekljskjf s
+l
+jfkjadfkjkjfk
+;jfkjakdfjdjf ;al
+klajd
+kfjaskdlfj kdljfkasjd"
 
 [connection signal="mouse_entered" from="cards-constant/slide1" to="." method="_on_slide_1_mouse_entered"]
 [connection signal="mouse_exited" from="cards-constant/slide1" to="." method="_on_slide_1_mouse_exited"]

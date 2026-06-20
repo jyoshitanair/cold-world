@@ -14,6 +14,10 @@ extends Node2D
 @export var text1 = "fahhh"
 @export var text2 = "fahhh"
 @export var text3 = "fahhh"
+@export var power_percent1 = ["speed", 0.1]
+@export var power_percent2 = ["speed", 0.1]
+@export var power_percent3 = ["speed", 0.1]
+#boost names: speed,warmth,jackpot,jump, hot_potato, double_jump, unity
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	image_1.texture = img1
@@ -22,6 +26,10 @@ func _ready() -> void:
 	label_1.text = text1
 	label_2.text = text2
 	label_3.text = text1
+	for i in range(1,3):
+		var name = "power_percent%d"%i
+		var powerup = name[0]
+		var percent = name[1]
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

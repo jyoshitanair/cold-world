@@ -3,9 +3,15 @@ extends Node2D
 @onready var body: Area2D = $circle/Area2D
 @onready var start: Marker2D = $Marker2D
 @onready var end: Marker2D = $Marker2D2
+@onready var green: Panel = $green
+@onready var yellow: Panel = $yellow
+@onready var red: Panel = $red
 var loaded = false
 var target
+var can_move= true
 var tween
+var yellow_on = false
+var entered_once = false
 func _ready() -> void:
 	circle.global_position
 	target = start.global_position
@@ -14,30 +20,60 @@ func _ready() -> void:
 	tweeny()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if can_move == false:
+		tween.kill()
 	if Input.is_action_just_pressed("click"):
+		can_move = false
 		var colliders = body.get_overlapping_areas()
-		var collider = colliders[0]
-		if collider.is_in_group("green"):
-			pass
-			#green.show()
-		if collider.is_in_group("green"):
-			pass
-			#yellow.show()
-		if collider.is_in_group("green"):
-			pass
-			#red.show()
-func tweeny() -> void: 
-	tween = create_tween()
-	tween.set_trans(Tween.TRANS_QUAD)
-	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.tween_property(circle, "global_position", target, 1.5)
-	await tween.finished
-	tween.kill()
-	after()
-func after() -> void: 
-	if not(tween and tween.is_valid()): 
-		if circle.position == start.global_position:
-			target = end.global_position
+		var collider
+		if colliders.size() >= 2:
+			collider = colliders[1]
 		else:
-			target = start.global_position
-		tweeny()
+			collider = colliders[0]
+		if collider.is_in_group("green"):
+			green.show()
+			yellow.hide()
+			red.hide()
+			await get_tree().create_timer(1).timeout
+			get_tree().change_scene_to_file("res://scenes/slots.tscn")
+		if collider.is_in_group("yellow"):
+			yellow.show()
+			green.hide()
+			red.hide()
+			yellow_on = true
+		if collider.is_in_group("red"):
+			red.show()
+			yellow.hide()
+			green.hide()
+			await get_tree().create_timer(1).timeout
+			get_tree().change_scene_to_file("res://scenes/tileset-tb-copied!.tscn")
+		if yellow_on:
+			if !Manager.entered_once:
+				Manager.entered_once = true
+				print("first")
+				yellow_on = false
+				await get_tree().create_timer(2.0).timeout
+				get_tree().change_scene_to_file("res://scenes/jackpot.tscn")
+			else:
+				red.show()
+				yellow.hide()
+				green.hide()
+				get_tree().change_scene_to_file("res://scenes/tileset-tb-copied!.tscn")
+				
+func tweeny() -> void: 
+	if can_move:
+		tween = create_tween()
+		tween.set_trans(Tween.TRANS_QUAD)
+		tween.set_ease(Tween.EASE_IN_OUT)
+		tween.tween_property(circle, "global_position", target, 1.5)
+		await tween.finished
+		tween.kill()
+		after()
+func after() -> void: 
+	if can_move:
+		if not(tween and tween.is_valid()): 
+			if circle.position == start.global_position:
+				target = end.global_position
+			else:
+				target = start.global_position
+			tweeny()

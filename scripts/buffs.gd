@@ -39,7 +39,7 @@ kfjaskdlfj kdljfkasjd333"
 @export var power_percent2 = ["speed", 0.1]
 @export var power_percent3 = ["speed", 0.1]
 var arrary_powers 
-var powerup_array = ["speed_multiplier","warmth","jackpot","jump_multiplier", "hot_potato", "double_jump","unity"]
+var powerup_array = ["double_or_nothing","speed_multiplier","warmth","jackpot","jump_multiplier", "hot_potato", "double_jump","unity"]
 var on1 = false
 var on2 = false
 var on3 = false
@@ -94,11 +94,13 @@ func clicky(i) ->void:
 	var percent
 	var name = arrary_powers[i]
 	var powerup = name[0]
+	if powerup == "jackpot":
+		get_tree().change_scene_to_file("res://scenes/jackpot.tscn")
+	if powerup == "double_or_nothing":
+		get_tree().change_scene_to_file("res://scenes/slots.tscn")
 	percent = name[1]
 	for k in powerup_array:
 		if k == powerup:
-			if powerup == "jackpot":
-				get_tree().change_scene_to_file("res://scenes/jackpot.tscn")
 			chosen_power = powerup
 	Manager.set(chosen_power,percent)
 	print(chosen_power)

@@ -10,7 +10,7 @@ var death_count = 0
 var player_name = "heyhey"
 var player_list = []
 var score = 0 
-
+var entered_once = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SilentWolf.configure({

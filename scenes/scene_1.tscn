@@ -12,7 +12,9 @@ height = 124.0
 [node name="scene_1" type="Node2D" unique_id=395208896]
 
 [node name="player_1" type="CharacterBody2D" parent="." unique_id=1236114238]
-position = Vector2(823, 328)
+position = Vector2(280, 300)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_3sd7o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_1" unique_id=1236263148]
@@ -27,7 +29,9 @@ offset_right = 4.0
 offset_bottom = -73.0
 
 [node name="player_2" type="CharacterBody2D" parent="." unique_id=1872515700]
-position = Vector2(344, 333)
+position = Vector2(889, 282)
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("3_1abo5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_2" unique_id=430090403]

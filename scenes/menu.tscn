@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://u37vnf26bsu4"]
+
+[ext_resource type="Script" uid="uid://cw06dpnlrggbn" path="res://scripts/menu.gd" id="1_yqeox"]
+
+[node name="menu" type="Node2D" unique_id=601217228]
+script = ExtResource("1_yqeox")
+
+[node name="play" type="Button" parent="." unique_id=711356740]
+offset_left = 434.0
+offset_top = 195.0
+offset_right = 720.0
+offset_bottom = 234.0
+text = "play"
+
+[node name="lb" type="Button" parent="." unique_id=614306322]
+offset_left = 404.0
+offset_top = 305.0
+offset_right = 759.0
+offset_bottom = 355.0
+text = "leaderboard"
+
+[connection signal="pressed" from="lb" to="." method="_on_lb_pressed"]

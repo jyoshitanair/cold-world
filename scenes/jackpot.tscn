@@ -158,3 +158,12 @@ theme_override_font_sizes/font_size = 100
 text = "u suck."
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="clicker" type="Label" parent="." unique_id=1329478806]
+visible = false
+offset_left = 593.0
+offset_top = 86.0
+offset_right = 896.0
+offset_bottom = 212.0
+theme_override_font_sizes/font_size = 20
+text = "u can click now!"

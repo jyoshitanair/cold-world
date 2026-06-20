@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://c5tplv82p1ylm"]
+
+[ext_resource type="Script" uid="uid://btmpgj3eilx8r" path="res://scripts/buffs.gd" id="1_lwdrh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pom5n"]
+bg_color = Color(0.94369775, 0.9436977, 0.94369763, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rid7q"]
+bg_color = Color(0.20560217, 0.11244569, 0.2830648, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_2gvmf"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1x0no"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_bk3iy"]
+
+[node name="Buffs" type="Node2D" unique_id=1305887323]
+script = ExtResource("1_lwdrh")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1157025157]
+offset_left = -39.0
+offset_top = -41.0
+offset_right = 1190.0
+offset_bottom = 695.0
+color = Color(0, 0, 0, 1)
+
+[node name="cards-constant" type="Node2D" parent="." unique_id=12732124]
+position = Vector2(114.99999, 102.99999)
+scale = Vector2(0.8, 0.8)
+
+[node name="border1" type="Panel" parent="cards-constant" unique_id=546241214]
+visible = false
+offset_left = -46.249985
+offset_top = 78.750015
+offset_right = 280.75
+offset_bottom = 613.75
+theme_override_styles/panel = SubResource("StyleBoxFlat_pom5n")
+
+[node name="border2" type="Panel" parent="cards-constant" unique_id=511696005]
+visible = false
+offset_left = 403.75
+offset_top = 81.25
+offset_right = 730.75
+offset_bottom = 615.25
+theme_override_styles/panel = SubResource("StyleBoxFlat_pom5n")
+
+[node name="border3" type="Panel" parent="cards-constant" unique_id=65549895]
+visible = false
+offset_left = 867.5
+offset_top = 78.75001
+offset_right = 1194.5
+offset_bottom = 615.75
+theme_override_styles/panel = SubResource("StyleBoxFlat_pom5n")
+
+[node name="slide1" type="Panel" parent="cards-constant" unique_id=912089932]
+offset_left = -31.249992
+offset_top = 95.750015
+offset_right = 295.75
+offset_bottom = 651.75
+scale = Vector2(0.9, 0.9)
+theme_override_styles/panel = SubResource("StyleBoxFlat_rid7q")
+
+[node name="slide2" type="Panel" parent="cards-constant" unique_id=1994739567]
+offset_left = 418.75
+offset_top = 96.250015
+offset_right = 745.75
+offset_bottom = 652.25
+scale = Vector2(0.9, 0.9)
+theme_override_styles/panel = SubResource("StyleBoxFlat_rid7q")
+
+[node name="slide3" type="Panel" parent="cards-constant" unique_id=740981231]
+offset_left = 882.5
+offset_top = 94.750015
+offset_right = 1209.5
+offset_bottom = 650.75
+scale = Vector2(0.9, 0.9)
+theme_override_styles/panel = SubResource("StyleBoxFlat_rid7q")
+
+[node name="Label" type="Label" parent="." unique_id=1891623016]
+offset_right = 1150.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 51
+text = "Choose your buff:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="image-1" type="Sprite2D" parent="." unique_id=1306873090]
+position = Vector2(208.00002, 284)
+texture = SubResource("PlaceholderTexture2D_2gvmf")
+
+[node name="image-2" type="Sprite2D" parent="." unique_id=924366856]
+position = Vector2(567.00006, 283)
+texture = SubResource("PlaceholderTexture2D_1x0no")
+
+[node name="image-3" type="Sprite2D" parent="." unique_id=1283442445]
+position = Vector2(939, 281.00003)
+texture = SubResource("PlaceholderTexture2D_bk3iy")
+
+[node name="label1" type="Label" parent="." unique_id=1768288562]
+offset_left = 118.0
+offset_top = 367.0
+offset_right = 334.0
+offset_bottom = 420.0
+theme_override_font_sizes/font_size = 24
+text = "text"
+
+[node name="label2" type="Label" parent="." unique_id=1421955891]
+offset_left = 476.0
+offset_top = 362.0
+offset_right = 692.0
+offset_bottom = 415.0
+theme_override_font_sizes/font_size = 24
+text = "text"
+
+[node name="label3" type="Label" parent="." unique_id=888252751]
+offset_left = 852.0
+offset_top = 365.0
+offset_right = 1068.0
+offset_bottom = 418.0
+theme_override_font_sizes/font_size = 24
+text = "text"
+
+[connection signal="mouse_entered" from="cards-constant/slide1" to="." method="_on_slide_1_mouse_entered"]
+[connection signal="mouse_exited" from="cards-constant/slide1" to="." method="_on_slide_1_mouse_exited"]
+[connection signal="mouse_entered" from="cards-constant/slide2" to="." method="_on_slide_2_mouse_entered"]
+[connection signal="mouse_exited" from="cards-constant/slide2" to="." method="_on_slide_2_mouse_exited"]
+[connection signal="mouse_entered" from="cards-constant/slide3" to="." method="_on_slide_3_mouse_entered"]
+[connection signal="mouse_exited" from="cards-constant/slide3" to="." method="_on_slide_3_mouse_exited"]

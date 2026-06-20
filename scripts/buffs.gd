@@ -97,6 +97,8 @@ func clicky(i) ->void:
 	percent = name[1]
 	for k in powerup_array:
 		if k == powerup:
+			if powerup == "jackpot":
+				get_tree().change_scene_to_file("res://scenes/jackpot.tscn")
 			chosen_power = powerup
 	Manager.set(chosen_power,percent)
 	print(chosen_power)

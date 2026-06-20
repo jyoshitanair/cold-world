@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://de4lr7874dddr"]
+
+[ext_resource type="Script" uid="uid://dplqrsgxxykix" path="res://scripts/jackpot.gd" id="1_4whi5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqrfi"]
+size = Vector2(341, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rid7q"]
+size = Vector2(325, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3gqeq"]
+size = Vector2(291, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pom5n"]
+size = Vector2(49, 85)
+
+[node name="Jackpot" type="Node2D" unique_id=1658819312]
+script = ExtResource("1_4whi5")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2034551533]
+offset_right = 1186.0
+offset_bottom = 672.0
+mouse_filter = 1
+color = Color(0.73773474, 0.49650365, 0.29314828, 1)
+
+[node name="Label" type="Label" parent="." unique_id=142917850]
+offset_right = 1146.0
+offset_bottom = 69.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "jackpot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=872608460]
+offset_left = 116.0
+offset_top = 546.0
+offset_right = 1076.0
+offset_bottom = 616.0
+mouse_filter = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=636591058]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=870884022]
+position = Vector2(287.5, 582)
+shape = SubResource("RectangleShape2D_cqrfi")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=185976353]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1891716588]
+position = Vector2(913.5, 582)
+shape = SubResource("RectangleShape2D_rid7q")
+
+[node name="Area2D3" type="Area2D" parent="." unique_id=602329436]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=503902278]
+position = Vector2(604.5, 582)
+shape = SubResource("RectangleShape2D_3gqeq")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=507697277]
+position = Vector2(146, 538)
+gizmo_extents = 0.0
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=217902031]
+position = Vector2(1026, 538)
+gizmo_extents = 0.0
+
+[node name="circle" type="Node2D" parent="." unique_id=112764647]
+position = Vector2(600, 538)
+
+[node name="circle" type="Panel" parent="circle" unique_id=1657140212]
+offset_right = 51.0
+offset_bottom = 87.0
+mouse_filter = 1
+
+[node name="Area2D" type="Area2D" parent="circle" unique_id=1160891326]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="circle/Area2D" unique_id=2034074613]
+position = Vector2(26.5, 41.5)
+shape = SubResource("RectangleShape2D_pom5n")

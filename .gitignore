@@ -2,3 +2,4 @@
 .godot/
 /android/
 scripts/Secrets.gd
+scripts/Secrets.gd.uid

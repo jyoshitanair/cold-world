@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Manager="*uid://cfq51m4pmgg5u"
+Secrets="*uid://dix8tl1k736nx"
 
 [input]
 

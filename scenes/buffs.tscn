@@ -24,12 +24,16 @@ corner_radius_bottom_left = 60
 
 [node name="Buffs" type="Node2D" unique_id=1305887323]
 script = ExtResource("1_lwdrh")
+power_percent1 = ["warmth", 0.1]
+power_percent2 = ["speed_multiplier", 0.1]
+power_percent3 = ["jump_multiplier", 0.1]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1157025157]
 offset_left = -39.0
 offset_top = -41.0
 offset_right = 1190.0
 offset_bottom = 695.0
+mouse_filter = 1
 color = Color(0, 0, 0, 1)
 
 [node name="cards-constant" type="Node2D" parent="." unique_id=12732124]
@@ -42,6 +46,7 @@ offset_left = -46.249985
 offset_top = 78.750015
 offset_right = 280.75
 offset_bottom = 613.75
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_pom5n")
 
 [node name="border2" type="Panel" parent="cards-constant" unique_id=511696005]
@@ -50,6 +55,7 @@ offset_left = 403.75
 offset_top = 81.25
 offset_right = 730.75
 offset_bottom = 615.25
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_pom5n")
 
 [node name="border3" type="Panel" parent="cards-constant" unique_id=65549895]
@@ -58,6 +64,7 @@ offset_left = 867.5
 offset_top = 78.75001
 offset_right = 1194.5
 offset_bottom = 615.75
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_pom5n")
 
 [node name="slide1" type="Panel" parent="cards-constant" unique_id=912089932]
@@ -66,6 +73,7 @@ offset_top = 95.750015
 offset_right = 295.75
 offset_bottom = 651.75
 scale = Vector2(0.9, 0.9)
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rid7q")
 
 [node name="slide2" type="Panel" parent="cards-constant" unique_id=1994739567]
@@ -74,6 +82,7 @@ offset_top = 96.250015
 offset_right = 745.75
 offset_bottom = 652.25
 scale = Vector2(0.9, 0.9)
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rid7q")
 
 [node name="slide3" type="Panel" parent="cards-constant" unique_id=740981231]
@@ -82,6 +91,7 @@ offset_top = 94.750015
 offset_right = 1209.5
 offset_bottom = 650.75
 scale = Vector2(0.9, 0.9)
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_rid7q")
 
 [node name="Label" type="Label" parent="." unique_id=1891623016]

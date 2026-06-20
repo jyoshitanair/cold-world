@@ -14,7 +14,7 @@ var jumped = false
 var warmth:float
 
 var speed = 300.0 * speedMult
-var jumpVelocity = -400.0 * jumpMult
+var jumpVelocity = -800.0 * jumpMult
 
 func _ready() -> void:
 	for child in get_parent().get_children():

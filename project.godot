@@ -21,6 +21,10 @@ Manager="*uid://cfq51m4pmgg5u"
 Secrets="*uid://dix8tl1k736nx"
 SilentWolf="*uid://rx0med2jxafo"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")

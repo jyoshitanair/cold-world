@@ -36,8 +36,10 @@ theme_override_font_sizes/font_size = 60
 text = "Score"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1348065568]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 76.0
+offset_top = 86.0
+offset_right = 1088.0
+offset_bottom = 650.0
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=1675226320]
 layout_mode = 2

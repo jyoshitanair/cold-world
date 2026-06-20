@@ -15,6 +15,7 @@ offset_left = 173.0
 offset_top = 292.0
 offset_right = 738.0
 offset_bottom = 348.0
+placeholder_text = "enter ya name here"
 
 [node name="Label" type="Label" parent="." unique_id=700803301]
 offset_left = 168.0

@@ -21,6 +21,12 @@ height = 122.0
 [node name="player" type="CharacterBody2D" unique_id=1204618469]
 script = ExtResource("1_g2els")
 
+[node name="warmthInd" type="Sprite2D" parent="." unique_id=1639653953]
+modulate = Color(0, 1, 1, 1)
+position = Vector2(1, -5)
+scale = Vector2(1.6171875, 1.640625)
+texture = ExtResource("1_3vyb7")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=210619696]
 sprite_frames = SubResource("SpriteFrames_y85q1")
 

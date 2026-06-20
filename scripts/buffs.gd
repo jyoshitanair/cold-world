@@ -30,6 +30,7 @@ func _ready() -> void:
 		var name = "power_percent%d"%i
 		var powerup = name[0]
 		var percent = name[1]
+		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

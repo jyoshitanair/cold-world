@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c3j6ukimtqjy3"]
+
+[ext_resource type="Script" uid="uid://b37kl2gpdb6ie" path="res://player_1.gd" id="1_3sd7o"]
+[ext_resource type="Texture2D" uid="uid://luq258vtismx" path="res://icon.svg" id="2_3xosi"]
+[ext_resource type="Script" uid="uid://bs7kf8rq1vvln" path="res://player_2.gd" id="3_1abo5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cefh6"]
+radius = 38.0
+height = 124.0
+
+[node name="scene_1" type="Node2D" unique_id=395208896]
+
+[node name="player_1" type="CharacterBody2D" parent="." unique_id=1236114238]
+position = Vector2(823, 328)
+script = ExtResource("1_3sd7o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_1" unique_id=1236263148]
+shape = SubResource("CapsuleShape2D_cefh6")
+
+[node name="Sprite2D" type="Sprite2D" parent="player_1" unique_id=1651298980]
+texture = ExtResource("2_3xosi")
+
+[node name="ProgressBar" type="ProgressBar" parent="player_1" unique_id=1239580989]
+offset_top = -100.0
+offset_right = 4.0
+offset_bottom = -73.0
+
+[node name="player_2" type="CharacterBody2D" parent="." unique_id=1872515700]
+position = Vector2(344, 333)
+script = ExtResource("3_1abo5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_2" unique_id=430090403]
+shape = SubResource("CapsuleShape2D_cefh6")
+
+[node name="Sprite2D" type="Sprite2D" parent="player_2" unique_id=1111543008]
+texture = ExtResource("2_3xosi")
+
+[node name="ProgressBar" type="ProgressBar" parent="player_2" unique_id=1559610905]
+offset_top = -100.0
+offset_right = 4.0
+offset_bottom = -73.0

@@ -18,6 +18,7 @@ extends Node2D
 @export var text1 = "fahhh"
 @export var text2 = "fahhh"
 @export var text3 = "fahhh"
+@export var level_path:String
 @export var mini_text1 = "loreum leurekljskjf s
 l
 jfkjadfkjkjfk
@@ -48,6 +49,7 @@ var clicked = false
 #boost names: speed,warmth,jackpot,jump, hot_potato, double_jump, unity
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Manager.level_path = level_path
 	arrary_powers = [power_percent1,power_percent2,power_percent3]
 	image_1.texture = img1
 	image_2.texture = img2
@@ -127,4 +129,4 @@ func clicky(i) ->void:
 				Manager.set(chosen_power,[false,1.0])
 	print(chosen_power)
 	print(Manager.get(chosen_power))
-	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
+	get_tree().change_scene_to_file(level_path)

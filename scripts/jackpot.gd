@@ -6,6 +6,7 @@ extends Node2D
 @onready var green: Panel = $green
 @onready var yellow: Panel = $yellow
 @onready var red: Panel = $red
+var powerup_array = ["double_or_nothing","speed_multiplier","warmth","jackpot","jump_multiplier", "hot_potato", "double_jump","unity"]
 var loaded = false
 var target
 var can_move= true
@@ -28,7 +29,6 @@ func _process(delta: float) -> void:
 		can_click = false
 		if !Manager.entered_once:
 			Manager.entered_once = true
-			print("first")
 			yellow_on = false
 			await get_tree().create_timer(2.0).timeout
 			get_tree().change_scene_to_file("res://scenes/jackpot.tscn")
@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 			yellow.hide()
 			red.hide()
 			await get_tree().create_timer(1).timeout
-			get_tree().change_scene_to_file("res://scenes/slots.tscn")
+			change_to_file("win")
 		if collider.is_in_group("yellow"):
 			yellow.show()
 			green.hide()
@@ -66,7 +66,30 @@ func _process(delta: float) -> void:
 			yellow.hide()
 			green.hide()
 			await get_tree().create_timer(1).timeout
-			get_tree().change_scene_to_file("res://scenes/tileset-tb-copied!.tscn")
+			change_to_file("lose")
+func change_to_file(wol) -> void:
+	if wol == "win":
+		var buffs = [Manager.jackpot_settings[1],Manager.jackpot_settings[0]]
+		for i in range(0,2):
+			var name1 = buffs[i]
+			var percent = name1[1]
+			var powerup = name1[0]
+			var chosen_power = ""
+			for k in powerup_array:
+				if k == powerup:
+					chosen_power = powerup
+					var percent2 = [true,percent]
+					Manager.set(chosen_power,percent2)
+					print(chosen_power)
+					print(Manager.get(chosen_power))
+				else:
+					chosen_power = k
+					if k == "unity" or k == "double_jump":
+						Manager.set(chosen_power,[false,false])
+					else:
+						Manager.set(chosen_power,[false,1.0])
+	get_tree().change_scene_to_file(Manager.level_path)
+	
 func tweeny() -> void: 
 	if can_move:
 		tween = create_tween()

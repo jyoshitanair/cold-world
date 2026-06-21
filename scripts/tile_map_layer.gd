@@ -16,3 +16,7 @@ func check_tile(col_pos) -> void:
 		var group = tile_data.get_custom_data("tile_group")
 		if group == "jelly":
 			print("jellah detected")
+			var player = get_tree().get_first_node_in_group("player") as Player
+			if player:
+				print("ADHF")
+				player.velocity.y = -700

@@ -54,3 +54,16 @@ theme = SubResource("Theme_4da66")
 theme_override_constants/h_separation = 180
 columns = 3
 script = ExtResource("1_mrg81")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=65427438]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=748913913]
+offset_left = 464.0
+offset_top = 576.0
+offset_right = 690.0
+offset_bottom = 622.0
+theme_override_font_sizes/font_size = 32
+text = "Back to Menu
+"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="ScrollContainer/GridContainer" method="_on_button_pressed"]

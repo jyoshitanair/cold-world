@@ -42,3 +42,8 @@ func sort_players_and_add_position(player_list):
 		position += 1
 		
 	return player_list
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file.call_deferred("res://scenes/menu.tscn")
+	pass # Replace with function body.

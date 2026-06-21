@@ -15,8 +15,10 @@ func _process(delta: float) -> void:
 			get_tree().change_scene_to_file("res://scenes/level_2.tscn")
 
 func _on_body_entered(body: Node2D) -> void:
-	inside = true
-	body1 = body
+	if body.is_in_group("player"):
+		inside = true
+		body1 = body
 func _on_body_exited(body: Node2D) -> void:
-	inside = false
-	body1 = null
+	if body.is_in_group("player"):
+		inside = false
+		body1 = null

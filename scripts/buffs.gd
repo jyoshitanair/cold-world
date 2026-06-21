@@ -106,6 +106,7 @@ func clicky(i) ->void:
 		if k == powerup:
 			chosen_power = powerup
 			Manager.set(chosen_power,percent)
+			powerup_array.find(powerup)
 		else:
 			chosen_power = k
 			if k == "unity" or k == "double_jump":

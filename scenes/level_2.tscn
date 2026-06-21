@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://d3duyjui5y1aj" path="res://scenes/player.tscn" id="3_pbc48"]
 [ext_resource type="Script" uid="uid://tgnolmqrnm7u" path="res://scripts/exit_ladder_1.gd" id="6_y0kc7"]
 [ext_resource type="Script" uid="uid://by7miy0yqkhos" path="res://scripts/exit_ladder_2.gd" id="7_ne2mo"]
+[ext_resource type="PackedScene" uid="uid://12f2vv1qwhk1" path="res://scenes/health.tscn" id="8_ne2mo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6cvei"]
 size = Vector2(50, 20)
@@ -75,6 +76,12 @@ script = ExtResource("7_ne2mo")
 position = Vector2(28, 32)
 scale = Vector2(2.88, 3.9599998)
 shape = SubResource("RectangleShape2D_que50")
+
+[node name="health" parent="." unique_id=157795596 instance=ExtResource("8_ne2mo")]
+offset_left = 305.0
+offset_top = 13.0
+offset_right = 865.0
+offset_bottom = 48.0
 
 [connection signal="body_entered" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_entered"]
 [connection signal="body_exited" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_exited"]

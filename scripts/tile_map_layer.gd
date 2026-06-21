@@ -19,7 +19,7 @@ func check_tile_1(col_pos,collider) -> void:
 		if group == "jelly":
 			if player_1 == collider:
 				print(player_1)
-				player_1.gravity_scale = 0.5
+				player_1.gravity_scale = 0.45
 				
 
 func check_tile_2(col_pos,collider) -> void:

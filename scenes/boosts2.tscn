@@ -5,13 +5,12 @@
 [node name="Boosts2" type="Node2D" unique_id=81466544]
 
 [node name="Buffs" parent="." unique_id=1305887323 instance=ExtResource("1_da3ks")]
-text1 = "Double Jump"
+text1 = "double or nothing"
 text2 = "Unity"
 text3 = "Warmth"
 level_path = "res://scenes/level_2.tscn"
-mini_text1 = "You have been granted the ability to jump midair :0"
+mini_text1 = "double or nothing? will you risk getting no boosts?"
 mini_text2 = "when you are closer to your pookie bear- the speed you freeze at will slow down by  a max of 30% "
 mini_text3 = "You will loose health slower by a factor of 5%"
-power_percent1 = ["double_jump", 0.9]
 power_percent2 = ["unity", 2.0]
 power_percent3 = ["warmth", 0.05]

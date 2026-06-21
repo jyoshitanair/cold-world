@@ -19,6 +19,9 @@ var score = 0
 var entered_once = false
 var dialog = 0
 var text_array = ["no","sjkfjladjhkjhjkkhjhjkhjkhhjhjhkhjhkjf","ksjdlkfjslf"]
+var exit_ladder_1_entered = false
+var exit_ladder_2_entered = false
+var level_1_easiness = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SilentWolf.configure({

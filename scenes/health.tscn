@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c45k10nij3m2r" path="res://assets/unfrozenHealth.png" id="2_but5r"]
 [ext_resource type="Script" uid="uid://d2cxd3ntl61pp" path="res://scripts/health.gd" id="3_r330t"]
 
-[node name="health" type="TextureProgressBar" unique_id=157795596]
+[node name="health" type="TextureProgressBar" unique_id=157795596 groups=["health"]]
 offset_left = 312.0
 offset_top = 16.0
 offset_right = 872.0

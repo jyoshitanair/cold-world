@@ -71,9 +71,6 @@ collision_layer = 5
 collision_mask = 5
 playerLeft = null
 
-[node name="warmthInd" parent="player" index="0" unique_id=1639653953]
-visible = true
-
 [node name="CollisionShape2D" parent="player/detect" parent_id_path=PackedInt32Array(919385135, 1932184325) index="0" unique_id=1016579011]
 position = Vector2(-0.375, 0.43115616)
 shape = SubResource("CapsuleShape2D_d2dbh")

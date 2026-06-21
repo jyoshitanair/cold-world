@@ -52,6 +52,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("7_a38lo")
+}],
+"loop": 1,
+"name": &"bean-standing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("11_ujl30")
 }, {
 "duration": 1.0,
@@ -78,6 +86,14 @@ animations = [{
 "loop": 1,
 "name": &"jam",
 "speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_wqfne")
+}],
+"loop": 1,
+"name": &"jelly-standing",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2dbh"]
@@ -101,9 +117,8 @@ texture = ExtResource("1_3vyb7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=416506337]
 scale = Vector2(1.1428572, 1.1428572)
 sprite_frames = SubResource("SpriteFrames_d2dbh")
-animation = &"jam"
+animation = &"jelly-standing"
 autoplay = "jam"
-frame_progress = 0.564291
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=620317246]
 position = Vector2(-0.375, 0.43115616)

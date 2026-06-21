@@ -24,12 +24,6 @@ func _ready() -> void:
 				playerRight = child
 
 func _physics_process(delta: float) -> void:
-	#collisions
-	var overlapping_areas = detect.get_overlapping_areas()
-	print(overlapping_areas)
-	for a in overlapping_areas:
-		if a.is_in_group("tileset"):
-			a.check_tile()
 	# determine warmth through distance
 	if (Manager.unity):
 		for child in get_parent().get_children():
@@ -68,5 +62,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-
-	move_and_slide()
+#collisions
+	var collided = move_and_slide()
+	if collided:
+		for i in range(get_slide_collision_count()):
+			var collision = get_slide_collision(i)
+			var collider = collision.get_collider()
+			if collider.is_in_group("tileset"):
+				var collision_point = collision.get_position()
+				collider.check_tile(collision_point)

@@ -11,9 +11,9 @@ func _process(delta: float) -> void:
 	pass
 
 func check_tile(col_pos) -> void: 
-	print("check_tile_running")
 	var tile_data = get_cell_tile_data(col_pos)
 	if tile_data:
+		print("tile_data")
 		var group = tile_data.get_custom_data("tile_group")
 		if group == "jelly":
 			print("jellah detected")

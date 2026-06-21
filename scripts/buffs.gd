@@ -92,17 +92,23 @@ func clicky(i) ->void:
 	print(i)
 	var chosen_power = "fail"
 	var percent
-	var name = arrary_powers[i]
-	var powerup = name[0]
+	var name1 = arrary_powers[i]
+	var powerup = name1[0]
 	if powerup == "jackpot":
 		get_tree().change_scene_to_file("res://scenes/jackpot.tscn")
+		return
 	if powerup == "double_or_nothing":
 		get_tree().change_scene_to_file("res://scenes/slots.tscn")
-	percent = name[1]
+		return
+	percent = [true,name1[1]]
 	for k in powerup_array:
+		print(k)
 		if k == powerup:
 			chosen_power = powerup
-	Manager.set(chosen_power,percent)
+			Manager.set(chosen_power,percent)
+		else:
+			chosen_power = k
+			Manager.set(chosen_power,[false,0.0])
 	print(chosen_power)
 	print(Manager.get(chosen_power))
-	get_tree().change_scene_to_file("res://scenes/scene_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_1.tscn")

@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://y3mkehsr0brd"
-path="res://.godot/imported/Christmas Love.ttf-434714e3858e7500302c404a959c8cb0.fontdata"
+uid="uid://ctyxst6qiscb5"
+path="res://.godot/imported/BubbleBats-YqlJq.otf-caa309667c6b8deca944cfa888f6a3f6.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Christmas Love.ttf"
-dest_files=["res://.godot/imported/Christmas Love.ttf-434714e3858e7500302c404a959c8cb0.fontdata"]
+source_file="res://assets/fonts/BubbleBats-YqlJq.otf"
+dest_files=["res://.godot/imported/BubbleBats-YqlJq.otf-caa309667c6b8deca944cfa888f6a3f6.fontdata"]
 
 [params]
 

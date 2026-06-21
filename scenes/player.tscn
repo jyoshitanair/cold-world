@@ -35,3 +35,9 @@ sprite_frames = SubResource("SpriteFrames_y85q1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=620317246]
 position = Vector2(-0.375, 0.43115616)
 shape = SubResource("CapsuleShape2D_d2dbh")
+
+[node name="detect" type="Area2D" parent="." unique_id=1932184325]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect" unique_id=1016579011]
+position = Vector2(-0.375, 0.43115616)
+shape = SubResource("CapsuleShape2D_d2dbh")

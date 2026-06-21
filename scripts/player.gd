@@ -1,4 +1,5 @@
 class_name Player extends CharacterBody2D
+@onready var detect: Area2D = $detect
 
 @export var playerLeft:bool
 var playerRight:Player
@@ -23,6 +24,12 @@ func _ready() -> void:
 				playerRight = child
 
 func _physics_process(delta: float) -> void:
+	#collisions
+	var overlapping_areas = detect.get_overlapping_areas()
+	print(overlapping_areas)
+	for a in overlapping_areas:
+		if a.is_in_group("tileset"):
+			a.check_tile()
 	# determine warmth through distance
 	if (Manager.unity):
 		for child in get_parent().get_children():

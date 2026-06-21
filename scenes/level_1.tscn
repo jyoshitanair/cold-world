@@ -75,6 +75,46 @@ collision_mask = 5
 position = Vector2(-0.375, 0.43115616)
 shape = SubResource("CapsuleShape2D_d2dbh")
 
+[node name="tutorial" type="Control" parent="." unique_id=1910446515]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="jam" type="Label" parent="tutorial" unique_id=970095669]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 520.0
+offset_right = 852.0
+offset_bottom = 543.0
+text = "Use WASD to move."
+
+[node name="bean" type="Label" parent="tutorial" unique_id=1389766898]
+layout_mode = 0
+offset_left = 918.0
+offset_top = 522.0
+offset_right = 1108.0
+offset_bottom = 545.0
+text = "Use arrow keys to move."
+
+[node name="specific" type="Label" parent="tutorial" unique_id=772081188]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 371.0
+offset_right = 470.0
+offset_bottom = 420.0
+text = "Some blocks can only be
+ interacted with by specific players."
+horizontal_alignment = 1
+
+[node name="health" type="Label" parent="tutorial" unique_id=1280606102]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 53.0
+offset_right = 739.0
+offset_bottom = 76.0
+text = "Make it through before your time runs out!"
+
 [node name="health" parent="." unique_id=157795596 instance=ExtResource("4_pa8r4")]
 offset_left = 305.0
 offset_top = 13.0

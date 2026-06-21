@@ -13,3 +13,8 @@ func _process(delta: float) -> void:
 func _on_lb_pressed() -> void:
 	get_tree().change_scene_to_file.call_deferred("res://scenes/leaderboard.tscn")
 	pass # Replace with function body.
+
+
+func _on_play_pressed() -> void:
+	get_tree().change_scene_to_file.call_deferred("res://scenes/intro.tscn")
+	pass # Replace with function body.

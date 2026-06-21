@@ -2,43 +2,62 @@
 
 [ext_resource type="Script" uid="uid://cw06dpnlrggbn" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://cpc3k3g5gyy0e" path="res://assets/mountain.png" id="2_con2f"]
+[ext_resource type="FontFile" uid="uid://cvkxiu8o7secr" path="res://assets/Winter Kei.ttf" id="2_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://dlcvs6jxu3qmm" path="res://assets/snow.png" id="3_mhnvy"]
+
+[sub_resource type="Theme" id="Theme_y85q1"]
+default_font = ExtResource("2_mhnvy")
+Button/font_sizes/font_size = 27
 
 [node name="menu" type="Node2D" unique_id=601217228]
 script = ExtResource("1_yqeox")
 
-[node name="mountain" type="TextureRect" parent="." unique_id=1439735417]
+[node name="Control" type="Control" parent="." unique_id=1948116753]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme = SubResource("Theme_y85q1")
+
+[node name="mountain" type="TextureRect" parent="Control" unique_id=1439735417]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("2_con2f")
 
-[node name="play" type="Button" parent="." unique_id=711356740]
-offset_left = 61.0
-offset_top = 401.0
-offset_right = 347.0
+[node name="play" type="Button" parent="Control" unique_id=711356740]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 400.0
+offset_right = 350.0
 offset_bottom = 440.0
 text = "play"
 
-[node name="lb" type="Button" parent="." unique_id=614306322]
-offset_left = 57.0
-offset_top = 476.0
-offset_right = 412.0
-offset_bottom = 526.0
+[node name="lb" type="Button" parent="Control" unique_id=614306322]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 472.0
+offset_right = 419.0
+offset_bottom = 522.0
 text = "leaderboard"
 
-[node name="Label" type="Label" parent="." unique_id=372386677]
-offset_left = 60.0
-offset_top = 56.0
-offset_right = 738.0
-offset_bottom = 409.0
+[node name="Label" type="Label" parent="Control" unique_id=372386677]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 76.0
+offset_right = 801.0
+offset_bottom = 407.0
 theme_override_constants/line_spacing = -25
-theme_override_font_sizes/font_size = 128
+theme_override_font_sizes/font_size = 152
 text = "Cold 
 World"
 
-[node name="snow" type="TextureRect" parent="." unique_id=634925438]
+[node name="snow" type="TextureRect" parent="Control" unique_id=634925438]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
+mouse_filter = 2
 texture = ExtResource("3_mhnvy")
 
-[connection signal="pressed" from="lb" to="." method="_on_lb_pressed"]
+[connection signal="pressed" from="Control/play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/lb" to="." method="_on_lb_pressed"]

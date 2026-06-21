@@ -91,4 +91,13 @@ func _physics_process(delta: float) -> void:
 					var collision_point = collision.get_position()
 					var collision_normal = collision.get_normal()
 					var final = collider.local_to_map(collider.to_local(collision_point - collision_normal*4))
-					collider.check_tile(final,self)
+					collider.check_tile_1(final,self)
+		elif is_in_group("bean"):
+			for i in range(get_slide_collision_count()):
+				var collision = get_slide_collision(i)
+				var collider = collision.get_collider()
+				if collider.is_in_group("tileset"):
+					var collision_point = collision.get_position()
+					var collision_normal = collision.get_normal()
+					var final = collider.local_to_map(collider.to_local(collision_point - collision_normal*4))
+					collider.check_tile_2(final,self)

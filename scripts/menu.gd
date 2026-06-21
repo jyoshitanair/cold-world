@@ -16,5 +16,5 @@ func _on_lb_pressed() -> void:
 
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file.call_deferred("res://scenes/intro.tscn")
+	get_tree().change_scene_to_file.call_deferred("res://scenes/text_edit(addpls).tscn")
 	pass # Replace with function body.

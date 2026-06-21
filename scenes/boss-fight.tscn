@@ -1,0 +1,67 @@
+[gd_scene format=4 uid="uid://dhp416fck6jx5"]
+
+[ext_resource type="Script" uid="uid://cl1kkichh6gq2" path="res://scripts/boss_fight.gd" id="1_1tsao"]
+[ext_resource type="PackedScene" uid="uid://df8xgge2wjrcb" path="res://scenes/tileset-tb-copied!.tscn" id="2_6f77m"]
+[ext_resource type="Texture2D" uid="uid://luq258vtismx" path="res://assets/icon.svg" id="3_id8m3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqrfi"]
+size = Vector2(127.1348, 125.418365)
+
+[node name="BossFight" type="Node2D" unique_id=1009343950]
+script = ExtResource("1_1tsao")
+
+[node name="TilesetTbCopied!" parent="." unique_id=1682306031 instance=ExtResource("2_6f77m")]
+scale = Vector2(0.3, 0.3)
+
+[node name="TileMapLayer" parent="TilesetTbCopied!" index="0" unique_id=715858353]
+tile_map_data = PackedByteArray("AAABAAAAAAAJAAQAAAACAAAAAAABAAUAAAADAAAAAAAJAAQAAAAEAAAAAAABAAUAAAAFAAAAAAAIAAQAAAAIAAAAAAAAAAUAAAAJAAAAAAABAAUAAAAKAAAAAAAAAAUAAAALAAAAAAAAAAUAAAADAA0AAAAFAAAAAAAEAA0AAAAJAAMAAAAFAA0AAAAJAAIAAAACAA0AAAAEAAAAAAAHAA0AAAAJAAMAAAAGAA0AAAAJAAMAAAAAAA0AAAAHAAMAAAAaAA0AAAADAAIAAAAZAA0AAAAFAAIAAAAYAA0AAAAGAAIAAAAXAA0AAAAFAAIAAAAWAA0AAAACAAMAAAAVAA0AAAACAAMAAAAUAA0AAAAJAAMAAAATAA0AAAAJAAMAAAASAA0AAAAJAAMAAAARAA0AAAAJAAMAAAAQAA0AAAAJAAMAAAAPAA0AAAABAAAAAAAOAA0AAAAJAAMAAAABAA0AAAAJAAMAAAANAA0AAAAEAAMAAAAMAA0AAAAAAAMAAAAIAA0AAAAJAAIAAAAJAA0AAAAJAAIAAAAKAA0AAAACAAQAAAALAA0AAAACAAQAAAAAAA4AAAAGAAcAAAABAA4AAAAHAAcAAAACAA4AAAAHAAcAAAADAA4AAAAHAAcAAAAEAA4AAAAHAAcAAAAFAA4AAAAHAAcAAAAGAA4AAAAHAAcAAAAHAA4AAAAGAAcAAAAIAA4AAAAGAAcAAAAJAA4AAAAGAAcAAAAKAA4AAAAGAAcAAAALAA4AAAAGAAcAAAAMAA4AAAAGAAcAAAANAA4AAAAGAAcAAAAOAA4AAAAGAAcAAAAPAA4AAAAGAAcAAAAQAA4AAAAGAAcAAAARAA4AAAAGAAcAAAASAA4AAAAGAAcAAAATAA4AAAAGAAcAAAAUAA4AAAAGAAcAAAAVAA4AAAAGAAcAAAAWAA4AAAAGAAcAAAAXAA4AAAAGAAcAAAAYAA4AAAAGAAcAAAAZAA4AAAAGAAcAAAAaAA4AAAAGAAcAAAAaAA8AAAAHAAcAAAAZAA8AAAAHAAcAAAAYAA8AAAAHAAcAAAAXAA8AAAAHAAcAAAAWAA8AAAAHAAcAAAAVAA8AAAAHAAcAAAAUAA8AAAAHAAcAAAATAA8AAAAHAAcAAAASAA8AAAAHAAcAAAARAA8AAAAHAAcAAAAQAA8AAAAHAAcAAAAPAA8AAAAHAAcAAAAOAA8AAAAGAAcAAAANAA8AAAAGAAcAAAAMAA8AAAAHAAcAAAALABAAAAAHAAcAAAAKABAAAAAHAAcAAAAJABAAAAAHAAcAAAAIABAAAAAHAAcAAAAHABAAAAAHAAcAAAAGABAAAAAHAAcAAAAPABAAAAAHAAcAAAAOABAAAAAHAAcAAAANABAAAAAHAAcAAAAMABAAAAAHAAcAAAALAA8AAAAHAAcAAAAKAA8AAAAHAAcAAAAJAA8AAAAHAAcAAAAIAA8AAAAHAAcAAAAFABAAAAAHAAcAAAAEABAAAAAHAAcAAAADABAAAAAHAAcAAAACABAAAAAHAAcAAAABABAAAAAHAAcAAAABAA8AAAAHAAcAAAAAAA8AAAAHAAcAAAAGAA8AAAAHAAcAAAAHAA8AAAAHAAcAAAAFAA8AAAAHAAcAAAAEAA8AAAAHAAcAAAADAA8AAAAHAAcAAAACAA8AAAAHAAcAAAAaAAwAAAAEAAMAAAACAAwAAAAEAAAAAAACAAsAAAAGAAAAAAAaAAsAAAADAAMAAAASAAAAAAAJAAQAAAATAAAAAAAAAAUAAAAUAAAAAAAJAAQAAAAVAAAAAAAJAAQAAAAPAAAAAAAAAAUAAAAaAAAAAAAJAAQAAAAYAAAAAAABAAUAAAA=")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1189002345]
+position = Vector2(-305, 238)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=168404144]
+position = Vector2(379, 283)
+texture = ExtResource("3_id8m3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=17579332]
+position = Vector2(378.5674, 282.29083)
+shape = SubResource("RectangleShape2D_cqrfi")
+
+[node name="Marker2D" type="Marker2D" parent="CharacterBody2D" unique_id=1813151422]
+position = Vector2(472, 281)
+
+[node name="player2" type="CharacterBody2D" parent="." unique_id=1912093240]
+position = Vector2(628, 237)
+
+[node name="Sprite2D" type="Sprite2D" parent="player2" unique_id=1509695436]
+position = Vector2(379, 283)
+texture = ExtResource("3_id8m3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player2" unique_id=784623451]
+position = Vector2(378.5674, 282.29083)
+shape = SubResource("RectangleShape2D_cqrfi")
+
+[node name="Marker2D" type="Marker2D" parent="player2" unique_id=139800890]
+position = Vector2(291, 286)
+
+[node name="yeti" type="CharacterBody2D" parent="." unique_id=704881557 groups=["yeti"]]
+position = Vector2(186, 235)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="yeti" unique_id=1617544405]
+position = Vector2(379, 283)
+texture = ExtResource("3_id8m3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yeti" unique_id=1938101115]
+position = Vector2(378.5674, 282.29083)
+shape = SubResource("RectangleShape2D_cqrfi")
+
+[node name="Area2D" type="Area2D" parent="yeti" unique_id=279958751]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="yeti/Area2D" unique_id=276731874]
+position = Vector2(378.5674, 282.29083)
+shape = SubResource("RectangleShape2D_cqrfi")
+
+[connection signal="area_entered" from="yeti/Area2D" to="." method="_on_area_2d_area_entered"]
+
+[editable path="TilesetTbCopied!"]

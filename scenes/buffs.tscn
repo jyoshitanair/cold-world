@@ -24,17 +24,8 @@ corner_radius_bottom_left = 60
 
 [node name="Buffs" type="Node2D" unique_id=1305887323]
 script = ExtResource("1_lwdrh")
-<<<<<<< HEAD
 power_percent1 = ["hot_potato", 0.1]
-=======
-<<<<<<< Updated upstream
-power_percent1 = ["hot_potato", true]
->>>>>>> d2e2f0f650b19bc30fa2e30bd10dbd7c9d633ca7
 power_percent2 = ["double_or_nothing", 0.1]
-=======
-power_percent1 = ["hot_potato", 0.1]
-power_percent2 = ["warmth", 0.1]
->>>>>>> Stashed changes
 power_percent3 = ["jump_multiplier", 0.1]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1157025157]

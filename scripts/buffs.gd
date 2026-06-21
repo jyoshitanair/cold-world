@@ -108,7 +108,10 @@ func clicky(i) ->void:
 			Manager.set(chosen_power,percent)
 		else:
 			chosen_power = k
-			Manager.set(chosen_power,[false,0.0])
+			if k == "unity" or k == "double_jump":
+				Manager.set(chosen_power,[false,false])
+			else:
+				Manager.set(chosen_power,[false,0.0])
 	print(chosen_power)
 	print(Manager.get(chosen_power))
 	get_tree().change_scene_to_file("res://scenes/level_1.tscn")

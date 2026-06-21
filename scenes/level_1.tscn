@@ -20,10 +20,13 @@ radius = 40.375
 height = 80.75
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqrfi"]
-size = Vector2(540, 214)
+size = Vector2(271, 229)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rid7q"]
 size = Vector2(350.5, 284)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pom5n"]
+size = Vector2(201.5, 266)
 
 [node name="scene_1" type="Node2D" unique_id=395208896]
 script = ExtResource("1_15mv3")
@@ -53,7 +56,7 @@ position = Vector2(-25, 0)
 tile_map_data = PackedByteArray("AAAAAAsAAAAHAAcAAAABAAsAAAAEAAkAAAACAAsAAAAEAAkAAAADAAsAAAAEAAkAAAAEAAsAAAAEAAkAAAAFAAsAAAAEAAkAAAAGAAsAAAAEAAkAAAAHAAsAAAAEAAkAAAAIAAsAAAAEAAkAAAAJAAsAAAAEAAkAAAAKAAsAAAAEAAkAAAALAAsAAAAEAAkAAAAMAAsAAAAEAAkAAAANAAsAAAAEAAkAAAAOAAsAAAAEAAkAAAAPAAsAAAAEAAkAAAAQAAsAAAAEAAkAAAARAAsAAAAEAAkAAAASAAsAAAAEAAkAAAATAAsAAAAEAAkAAAAUAAsAAAAHAAcAAAAQAAIAAAAAAAgAAAARAAIAAAAEAAkAAAASAAIAAAAEAAkAAAATAAIAAAAEAAkAAAAUAAIAAAAEAAkAAAAUAAMAAAAHAAcAAAAUAAQAAAAHAAcAAAATAAMAAAAHAAcAAAASAAMAAAAHAAcAAAATAAQAAAAHAAcAAAAUAAUAAAAHAAcAAAAUAAYAAAAHAAcAAAATAAUAAAAJAAQAAAASAAQAAAABAAUAAAARAAMAAAAAAAUAAAATAAEACAAAAAAAAAAUAAcAAAAHAAcAAAAUAAgAAAAHAAcAAAAUAAkAAAAHAAcAAAAUAAoAAAADAAIAAAAAAAoAAAAHAAcAAAAAAAkAAAAEAAkAAAAEAAkAAAABAAgAAAADAAkAAAAEAAkAAAACAAkAAAAEAAkAAAABAAkAAAAEAAkAAAAKAAcAAAAJAAcAAAAMAAcAAAABAAgAAAALAAcAAAAEAAkAAAABAAoAAAAHAAMAAAATAAoAAAAIAAMAAAAQAAoAAAAHAAYAAAAQAAkAAAACAAUAAAAQAAgAAAACAAUAAAAPAAkAAAAFAAUAAAAPAAgAAAAFAAUAAAARAAgAAAAAAAYAAAARAAkAAAAAAAYAAAAQAAcAAAACAAYAAAASAAoAAAABAAQAAAACAAoAAAADAAQAAAAIAAoAAAAAAAQAAAAJAAoAAAAJAAMAAAAAAAgAAAAEAAQAAAABAAgAAAADAAQAAAALAAQAAAAGAAcAAAAOAAMAAAAGAAcAAAAGAAgABQAAAAAAAAAHAAgABQACAAAAAAAHAAYAAQAAAAAAAAAIAAYAAQACAAAAAAATAAAACAAAAAAAAAARAAEABwAAAAAAAAARAAAABwAAAAAAAAAUAAEAAAAAAAQAAAASAAEAAAABAAkAAFAMAAoAAAAIAAIAAAA=")
 
 [node name="exit_ladder_1" type="Area2D" parent="." unique_id=1794810116 groups=["exit_ladder"]]
-position = Vector2(982.00006, 56.000004)
+position = Vector2(973, 56.000004)
 scale = Vector2(0.39999998, 1.4)
 collision_layer = 4
 collision_mask = 4
@@ -64,7 +67,7 @@ scale = Vector2(2.88, 3.96)
 shape = SubResource("RectangleShape2D_01rka")
 
 [node name="exit_ladder_2" type="Area2D" parent="." unique_id=1427021109 groups=["exit_ladder"]]
-position = Vector2(1065, 22)
+position = Vector2(1057, 22)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("3_4nkto")
@@ -90,6 +93,7 @@ position = Vector2(-0.375, 0.43115616)
 shape = SubResource("CapsuleShape2D_d2dbh")
 
 [node name="tutorial" type="Control" parent="." unique_id=1910446515]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -112,22 +116,34 @@ offset_bottom = 545.0
 text = "Use arrow keys to move."
 
 [node name="specific" type="Label" parent="tutorial" unique_id=772081188]
+visible = false
 layout_mode = 0
-offset_left = 10.0
-offset_top = 371.0
-offset_right = 470.0
-offset_bottom = 420.0
+offset_left = -43.0
+offset_top = 362.0
+offset_right = 417.0
+offset_bottom = 411.0
 text = "Some blocks can only be
  interacted with by specific players."
 horizontal_alignment = 1
 
 [node name="health" type="Label" parent="tutorial" unique_id=1280606102]
+visible = false
 layout_mode = 0
 offset_left = 407.0
 offset_top = 53.0
 offset_right = 739.0
 offset_bottom = 76.0
 text = "Make it through before your time runs out!"
+
+[node name="jump" type="Label" parent="tutorial" unique_id=638408367]
+visible = false
+layout_mode = 0
+offset_left = 319.0
+offset_top = 244.0
+offset_right = 703.0
+offset_bottom = 299.0
+text = "Jump off other players to 
+reach new heights"
 
 [node name="health" parent="." unique_id=157795596 instance=ExtResource("4_pa8r4")]
 offset_left = 305.0
@@ -138,7 +154,7 @@ offset_bottom = 48.0
 [node name="tut2" type="Area2D" parent="." unique_id=268114368]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tut2" unique_id=2046204997]
-position = Vector2(272, 381)
+position = Vector2(137.5, 388.5)
 shape = SubResource("RectangleShape2D_cqrfi")
 
 [node name="tut3" type="Area2D" parent="." unique_id=123012657]
@@ -147,12 +163,19 @@ shape = SubResource("RectangleShape2D_cqrfi")
 position = Vector2(745.75, 241)
 shape = SubResource("RectangleShape2D_rid7q")
 
+[node name="tut4" type="Area2D" parent="." unique_id=599509675]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tut4" unique_id=58316340]
+position = Vector2(416.25, 375)
+shape = SubResource("RectangleShape2D_pom5n")
+
 [connection signal="body_entered" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_entered"]
 [connection signal="body_exited" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_exited"]
 [connection signal="body_entered" from="exit_ladder_2" to="exit_ladder_2" method="_on_body_entered"]
 [connection signal="body_exited" from="exit_ladder_2" to="exit_ladder_2" method="_on_body_exited"]
 [connection signal="body_entered" from="tut2" to="." method="_on_tut_2_body_entered"]
 [connection signal="body_entered" from="tut3" to="." method="_on_tut_3_body_entered"]
+[connection signal="body_entered" from="tut4" to="." method="_on_tut_4_body_entered"]
 
 [editable path="TilesetTbCopied!"]
 [editable path="player2"]

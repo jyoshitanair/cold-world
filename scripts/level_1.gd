@@ -2,6 +2,7 @@ extends Level
 @onready var specific: Label = $tutorial/specific
 @onready var health: Label = $tutorial/health
 @onready var tutorial: Control = $tutorial
+@onready var jump: Label = $tutorial/jump
 
 
 
@@ -13,6 +14,8 @@ func _ready() -> void:
 	health.visible = false
 	health.hide()
 	specific.visible = false
+	jump.hide()
+	jump.visible = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
@@ -24,3 +27,6 @@ func _on_tut_2_body_entered(body: Node2D) -> void:
 func _on_tut_3_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		health.visible = true
+func _on_tut_4_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		jump.visible = true

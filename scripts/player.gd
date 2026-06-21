@@ -65,8 +65,6 @@ func _physics_process(delta: float) -> void:
 		for i in range(get_slide_collision_count()):
 			var collision = get_slide_collision(i)
 			var collider = collision.get_collider()
-			if collider.is_in_group("exit_ladder"):
-				print("hi")
 			if collider.is_in_group("tileset"):
 				var collision_point = collision.get_position()
 				var collision_normal = collision.get_normal()

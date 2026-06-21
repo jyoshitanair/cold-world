@@ -18,11 +18,15 @@ animations = [{
 radius = 40.375
 height = 80.75
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sp5e"]
+size = Vector2(79, 80)
+
 [node name="player" type="CharacterBody2D" unique_id=1204618469]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_g2els")
 
 [node name="warmthInd" type="Sprite2D" parent="." unique_id=1639653953]
+visible = false
 modulate = Color(0, 1, 1, 1)
 position = Vector2(2.3841858e-07, 7.9999995)
 scale = Vector2(0.9375, 0.9510869)
@@ -40,5 +44,5 @@ shape = SubResource("CapsuleShape2D_d2dbh")
 [node name="detect" type="Area2D" parent="." unique_id=1932184325]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detect" unique_id=1016579011]
-position = Vector2(-0.375, 0.43115616)
-shape = SubResource("CapsuleShape2D_d2dbh")
+position = Vector2(-0.5, 1.9073486e-06)
+shape = SubResource("RectangleShape2D_4sp5e")

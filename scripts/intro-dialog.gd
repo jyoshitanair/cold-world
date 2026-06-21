@@ -10,13 +10,15 @@ func _ready() -> void:
 	main_text.visible_characters = 0 
 	main_text.text = Manager.text_array[text_array_index]
 	if can_move == false:
-		fade.modulate = Color(0.0, 0.0, 0.0, 1.0)
-		fade.visible = true
-		var tween = create_tween()
-		tween.tween_property(fade,"modulate",Color(0.0, 0.0, 0.0, 0.0),3.0)
-		await tween.finished
+		if Manager.first == true:
+			Manager.first = false
+			fade.modulate = Color(0.0, 0.0, 0.0, 1.0)
+			fade.visible = true
+			var tween = create_tween()
+			tween.tween_property(fade,"modulate",Color(0.0, 0.0, 0.0, 0.0),3.0)
+			await tween.finished
+			fade.queue_free()
 		can_move = true
-	fade.queue_free()
 	typeity_type()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

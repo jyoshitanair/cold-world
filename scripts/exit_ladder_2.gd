@@ -23,4 +23,6 @@ func _on_body_entered(body: Node2D) -> void:
 		elif Manager.exit_ladder_2_entered == true:
 			print("exit_ladder_2_entered is true")
 		if Manager.exit_ladder_1_entered == true:
-			get_tree().change_scene_to_file("res://scenes/level_2.tscn")
+			Manager.exit_ladder_1_entered = false
+			Manager.exit_ladder_2_entered = false
+			get_tree().call_deferred("change_scene_to_file", "res://scenes/level_2.tscn")

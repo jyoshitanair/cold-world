@@ -36,9 +36,6 @@ func _physics_process(delta: float) -> void:
 		snowball.dir = -1
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print(area.get_groups())
-	print(area.get_parent().name)
-	
 	var snowball_root = area.get_parent()
 	if snowball_root and snowball_root.is_in_group("snowball"):
 		snowball_root.queue_free()

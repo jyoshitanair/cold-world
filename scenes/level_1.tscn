@@ -21,6 +21,7 @@ height = 80.75
 [node name="scene_1" type="Node2D" unique_id=395208896]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=397694933]
+visible = false
 position = Vector2(573, 373)
 texture = ExtResource("1_pa8r4")
 
@@ -69,7 +70,6 @@ playerLeft = true
 position = Vector2(1018, 553)
 collision_layer = 5
 collision_mask = 5
-playerLeft = null
 
 [node name="CollisionShape2D" parent="player/detect" parent_id_path=PackedInt32Array(919385135, 1932184325) index="0" unique_id=1016579011]
 position = Vector2(-0.375, 0.43115616)
@@ -82,7 +82,10 @@ offset_right = 865.00006
 offset_bottom = 48.0
 
 [connection signal="body_entered" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_entered"]
+[connection signal="body_exited" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_exited"]
 [connection signal="body_entered" from="exit_ladder_2" to="exit_ladder_2" method="_on_body_entered"]
+[connection signal="body_exited" from="exit_ladder_2" to="exit_ladder_2" method="_on_body_exited"]
 
+[editable path="TilesetTbCopied!"]
 [editable path="player2"]
 [editable path="player"]

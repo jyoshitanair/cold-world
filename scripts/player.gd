@@ -1,9 +1,8 @@
 class_name Player extends CharacterBody2D
 @onready var detect: Area2D = $detect
-
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var playerLeft:bool
 var playerRight:Player
-
 var flip = false
 #manager vars: speedMult, jumpMult, bool: double jump, unity
 
@@ -23,12 +22,6 @@ func _ready() -> void:
 		if child is Player:
 			if child.playerLeft != true:
 				playerRight = child
-	
-	if playerLeft:
-		$AnimatedSprite2D.animation = "jam"
-	else:
-		$AnimatedSprite2D.animation = "bean"
-
 func _physics_process(delta: float) -> void:
 	# determine warmth through distance
 	if (Manager.unity):
@@ -49,6 +42,10 @@ func _physics_process(delta: float) -> void:
 		
 	# Add the gravity.
 	if not is_on_floor():
+		if playerLeft:
+			animated_sprite_2d.play("jelly-jump")
+		else:
+			animated_sprite_2d.play("bean-jump")
 		velocity += get_gravity() * delta
 	else:
 		jumped = false
@@ -66,7 +63,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("player_1_right" if playerLeft else "player_2_right"):
 		flip = false 
 		
-	$AnimatedSprite2D.flip_h = flip
+	animated_sprite_2d.flip_h = flip
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -75,6 +72,13 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
+	if direction != 0.0:
+		if playerLeft:
+			animated_sprite_2d.play("jelly-run")
+		else:
+			animated_sprite_2d.play("bean-run")
+	else:
+			animated_sprite_2d.stop()
 #collisions
 	var collided = move_and_slide()
 	if collided:

@@ -23,7 +23,8 @@ SilentWolf="*uid://rx0med2jxafo"
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 

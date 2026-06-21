@@ -26,6 +26,17 @@ animations = [{
 "texture": ExtResource("3_fulsm")
 }, {
 "duration": 1.0,
+"texture": ExtResource("5_60mlk")
+}],
+"loop": 1,
+"name": &"bean-jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fulsm")
+}, {
+"duration": 1.0,
 "texture": ExtResource("4_4r5pv")
 }, {
 "duration": 1.0,
@@ -47,15 +58,18 @@ animations = [{
 "texture": ExtResource("10_ke2ow")
 }],
 "loop": 1,
-"name": &"bean",
+"name": &"bean-run",
 "speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_a38lo")
+"texture": ExtResource("15_wqfne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pf23h")
 }],
 "loop": 1,
-"name": &"bean-standing",
+"name": &"jelly-jump",
 "speed": 5.0
 }, {
 "frames": [{
@@ -84,27 +98,19 @@ animations = [{
 "texture": ExtResource("18_487ah")
 }],
 "loop": 1,
-"name": &"jam",
+"name": &"jelly-run",
 "speed": 9.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("15_wqfne")
-}],
-"loop": 1,
-"name": &"jelly-standing",
-"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2dbh"]
-radius = 40.375
+radius = 32.375
 height = 80.75
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4sp5e"]
-size = Vector2(79, 80)
+size = Vector2(65, 80)
 
 [node name="player" type="CharacterBody2D" unique_id=1204618469]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.6, 0.6)
 script = ExtResource("1_g2els")
 
 [node name="warmthInd" type="Sprite2D" parent="." unique_id=1639653953]
@@ -117,8 +123,7 @@ texture = ExtResource("1_3vyb7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=416506337]
 scale = Vector2(1.1428572, 1.1428572)
 sprite_frames = SubResource("SpriteFrames_d2dbh")
-animation = &"jelly-standing"
-autoplay = "jam"
+animation = &"jelly-run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=620317246]
 position = Vector2(-0.375, 0.43115616)
@@ -127,5 +132,5 @@ shape = SubResource("CapsuleShape2D_d2dbh")
 [node name="detect" type="Area2D" parent="." unique_id=1932184325]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detect" unique_id=1016579011]
-position = Vector2(-0.5, 1.9073486e-06)
+position = Vector2(6.5, 1.9073486e-06)
 shape = SubResource("RectangleShape2D_4sp5e")

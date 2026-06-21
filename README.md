@@ -16,11 +16,11 @@ horizons
 ### Our Cards:
 ---
 
-* Unity
-* Order
-* Cool
-* Permanent
-* Home
+* Unity: Play and work together with a friend, and take note of the unity buff!
+* Order: See how you rank on the leaderboard!
+* Cool: The ferrets' hometown is *too* cool for their liking.
+* Permanent: Hopefully the cold isn't! Make it to the end to save the town from this fate.
+* Home: What we are trying to save ... be fast!
 * Full house *6 boost!
 
 ### Description:

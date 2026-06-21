@@ -11,10 +11,10 @@ offset_bottom = 836.0
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=2139660347]
-offset_left = 447.0
-offset_top = 251.0
-offset_right = 634.0
-offset_bottom = 388.0
+offset_left = 375.0
+offset_top = 256.0
+offset_right = 731.0
+offset_bottom = 393.0
 theme_override_font_sizes/font_size = 100
 text = "Game over"
 
@@ -22,7 +22,7 @@ text = "Game over"
 offset_left = 268.0
 offset_top = 395.0
 offset_right = 853.0
-offset_bottom = 577.0
+offset_bottom = 508.0
 text = "View how you placed?"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

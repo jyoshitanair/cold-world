@@ -112,6 +112,8 @@ func clicky(i) ->void:
 		Manager.jackpot_speed = jackpot_speed
 		get_tree().change_scene_to_file("res://scenes/jackpot.tscn")
 		return
+	if powerup == "hot_potato":
+		Manager.percent_boost = true
 	if powerup == "double_or_nothing":
 		get_tree().change_scene_to_file("res://scenes/slots.tscn")
 		return

@@ -2,6 +2,7 @@ extends Node
 #ADD UP ALL THE LEVEL CALCS AND THEN SUBTRACT (Deaths * 15)
 #Score = Max(0, ((45 - Time) * 27 * Level) - (Deaths * 15 * Level) - (Easiness * 5 * Level))
 #finding score
+var percent_boost = false
 var level_one_calc = 0 
 var level_two_calc = 0 
 var level_three_calc = 0 

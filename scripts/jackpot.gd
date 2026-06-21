@@ -24,6 +24,22 @@ func _ready() -> void:
 	clicker.show()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if yellow_on:
+		can_click = false
+		if !Manager.entered_once:
+			Manager.entered_once = true
+			print("first")
+			yellow_on = false
+			await get_tree().create_timer(2.0).timeout
+			get_tree().change_scene_to_file("res://scenes/jackpot.tscn")
+		else:
+			red.show()
+			yellow.show()
+			green.hide()
+			yellow.text = "fail 2x"
+			await get_tree().create_timer(2.0).timeout
+			get_tree().change_scene_to_file("res://scenes/tileset-tb-copied!.tscn")
+				
 	if Input.is_action_just_pressed("click") and can_click:
 		can_move = false
 		tween.kill()
@@ -44,25 +60,13 @@ func _process(delta: float) -> void:
 			green.hide()
 			red.hide()
 			yellow_on = true
+			return
 		if collider.is_in_group("red"):
 			red.show()
 			yellow.hide()
 			green.hide()
 			await get_tree().create_timer(1).timeout
 			get_tree().change_scene_to_file("res://scenes/tileset-tb-copied!.tscn")
-		if yellow_on:
-			if !Manager.entered_once:
-				Manager.entered_once = true
-				print("first")
-				yellow_on = false
-				await get_tree().create_timer(2.0).timeout
-				get_tree().change_scene_to_file("res://scenes/jackpot.tscn")
-			else:
-				red.show()
-				yellow.hide()
-				green.hide()
-				get_tree().change_scene_to_file("res://scenes/tileset-tb-copied!.tscn")
-				
 func tweeny() -> void: 
 	if can_move:
 		tween = create_tween()

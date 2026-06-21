@@ -1,4 +1,5 @@
 extends Node
+<<<<<<< HEAD
 var speed_multiplier = [false,0.0]
 var warmth = [false,0.0]
 var jackpot = [false,0.0]
@@ -6,6 +7,15 @@ var jump_multiplier = [false,0.0]
 var hot_potato = [false,0.0]
 var double_jump = [false,0.0]
 var unity = [false,0.0]
+=======
+var speed_multiplier = [false,0.1]
+var warmth = [false,0.1]
+var jackpot = [false,0.1]
+var jump_multiplier = [false,0.1]
+var hot_potato = [false,0.1]
+var double_jump = [false,0.1]
+var unity = [false,0.1]
+>>>>>>> d2e2f0f650b19bc30fa2e30bd10dbd7c9d633ca7
 var death_count = 0 
 var player_name = "heyhey"
 var player_list = []

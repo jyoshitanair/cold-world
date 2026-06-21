@@ -90,7 +90,7 @@ func _on_slide_3_mouse_exited() -> void:
 # i be from 0-2
 func clicky(i) ->void: 
 	print(i)
-	var chosen_power = "fail"
+	var chosen_power = [false,0.1]
 	var percent
 	var name1 = arrary_powers[i]
 	var powerup = name1[0]
@@ -99,7 +99,10 @@ func clicky(i) ->void:
 		return
 	if powerup == "double_or_nothing":
 		get_tree().change_scene_to_file("res://scenes/slots.tscn")
+<<<<<<< HEAD
 		return
+=======
+>>>>>>> d2e2f0f650b19bc30fa2e30bd10dbd7c9d633ca7
 	percent = [true,name1[1]]
 	for k in powerup_array:
 		print(k)

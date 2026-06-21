@@ -15,7 +15,7 @@ tile_map_data = PackedByteArray("AAAAAAsAAAAHAAcAAAABAAsAAAAEAAkAAAACAAsAAAAEAAk
 tile_set = ExtResource("1_jm1iu")
 script = ExtResource("2_pbc48")
 
-[node name="player" parent="." unique_id=1204618469 groups=["player"] instance=ExtResource("3_pbc48")]
+[node name="player" parent="." unique_id=1204618469 groups=["jelly", "player"] instance=ExtResource("3_pbc48")]
 position = Vector2(958, 548)
 playerLeft = true
 

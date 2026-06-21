@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://c7onh4tvoutno"]
+[gd_scene format=4 uid="uid://c7onh4tvoutno"]
+
+[ext_resource type="TileSet" uid="uid://b5rjtnca4eya1" path="res://assets/tileset.tres" id="1_jm1iu"]
+[ext_resource type="Script" uid="uid://bstuhls1ydxsw" path="res://scripts/tile_map_layer.gd" id="2_pbc48"]
 
 [node name="Level2" type="Node2D" unique_id=2111030488]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1393924341]
+scale = Vector2(0.4, 0.4)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=636405592 groups=["tileset"]]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAAAAsAAAAHAAcAAAABAAsAAAAEAAkAAAACAAsAAAAEAAkAAAADAAsAAAAEAAkAAAAEAAsAAAAEAAkAAAAFAAsAAAAEAAkAAAAGAAsAAAAEAAkAAAAHAAsAAAAEAAkAAAAIAAsAAAAEAAkAAAAKAAsAAAAEAAkAAAAOAAsAAAAEAAkAAAAPAAsAAAAEAAkAAAAQAAsAAAAEAAkAAAARAAsAAAAEAAkAAAASAAsAAAAEAAkAAAATAAsAAAAEAAkAAAAUAAsAAAAHAAcAAAAJAAsAAAAEAAkAAAALAAsAAAAEAAkAAAAMAAsAAAAEAAkAAAANAAsAAAAEAAkAAAA=")
+tile_set = ExtResource("1_jm1iu")
+script = ExtResource("2_pbc48")

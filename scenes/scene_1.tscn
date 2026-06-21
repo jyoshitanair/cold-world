@@ -67,8 +67,16 @@ position = Vector2(28, 32)
 scale = Vector2(2.88, 3.9599998)
 shape = SubResource("RectangleShape2D_cefh6")
 
-[node name="player" parent="." unique_id=1204618469 instance=ExtResource("6_d7a6c")]
-position = Vector2(228, 329)
+[node name="player2" parent="." unique_id=1204618469 instance=ExtResource("6_d7a6c")]
+position = Vector2(765, 551)
+collision_layer = 3
+collision_mask = 3
+playerLeft = true
+
+[node name="player" parent="." unique_id=919385135 instance=ExtResource("6_d7a6c")]
+position = Vector2(1018, 553)
+collision_layer = 5
+collision_mask = 5
 
 [connection signal="area_entered" from="exit_ladder" to="player" method="_on_exit_ladder_area_entered"]
 [connection signal="body_entered" from="exit_ladder" to="player" method="_on_exit_ladder_body_entered"]

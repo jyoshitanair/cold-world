@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://12f2vv1qwhk1"]
 
-[ext_resource type="Texture2D" uid="uid://luq258vtismx" path="res://assets/icon.svg" id="1_58c75"]
-[ext_resource type="Texture2D" uid="uid://wih7rajhelwo" path="res://assets/blue_tile.png" id="2_but5r"]
+[ext_resource type="Texture2D" uid="uid://cm5iicaifbyn5" path="res://assets/frozenHealth.png" id="1_58c75"]
+[ext_resource type="Texture2D" uid="uid://c45k10nij3m2r" path="res://assets/unfrozenHealth.png" id="2_but5r"]
 [ext_resource type="Script" uid="uid://d2cxd3ntl61pp" path="res://scripts/health.gd" id="3_r330t"]
 
 [node name="health" type="TextureProgressBar" unique_id=157795596]
-offset_left = 232.0
-offset_top = 24.0
+offset_left = 312.0
+offset_top = 16.0
 offset_right = 872.0
-offset_bottom = 152.0
+offset_bottom = 51.0
 texture_under = ExtResource("1_58c75")
 texture_progress = ExtResource("2_but5r")
 script = ExtResource("3_r330t")

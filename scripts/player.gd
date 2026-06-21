@@ -5,8 +5,8 @@ var playerRight:Player
 
 #manager vars: speedMult, jumpMult, bool: double jump, unity
 
-var speedMult:float = Manager.speed_multiplier
-var jumpMult:float = Manager.jump_multiplier
+var speedMult:float = 1.2 if Manager.speed_multiplier else 1
+var jumpMult:float = 1.2 if Manager.jump_multiplier else 1
 
 var doubleJump = Manager.double_jump
 var jumped = false

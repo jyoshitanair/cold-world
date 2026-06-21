@@ -3,6 +3,7 @@ extends Node2D
 @onready var player_2: CharacterBody2D = $player2
 @onready var marker1: Marker2D = $CharacterBody2D/Marker2D
 @onready var marker2: Marker2D = $player2/Marker2D
+<<<<<<< Updated upstream
 @onready var label_2: Label = $Label2
 @onready var label: Label = $Label
 var snowball_path = preload("res://scenes/snowball.tscn")
@@ -17,10 +18,17 @@ func _physics_process(delta: float) -> void:
 	total_time += delta
 	label_2.text = "Time Elapsed: %d"%total_time
 	label.text = "Yeti Health: %d"%yeti_health
+=======
+var snowball_path = preload("res://scenes/snowball.tscn")
+func _ready() -> void:
+	pass
+func _physics_process(delta: float) -> void:
+>>>>>>> Stashed changes
 	if Input.is_action_just_pressed("e"):
 		var snowball = snowball_path.instantiate()
 		add_child(snowball)
 		snowball.global_position = marker1.global_position
+<<<<<<< Updated upstream
 		snowball.dir = 1
 	if Input.is_action_just_pressed("p"):
 		var snowball = snowball_path.instantiate()
@@ -35,3 +43,13 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		area.get_parent().queue_free()
 		area.hide()
 		yeti_health -= 0.5
+=======
+	#if Input.is_action_just_pressed("p"):
+	
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print(area.get_groups())
+	if area.is_in_group("snowball"):
+		area.queue_free()
+>>>>>>> Stashed changes

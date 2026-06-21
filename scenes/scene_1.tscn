@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://luq258vtismx" path="res://assets/icon.svg" id="2_3xosi"]
 [ext_resource type="Script" uid="uid://bs7kf8rq1vvln" path="res://scripts/player_2.gd" id="3_1abo5"]
 [ext_resource type="PackedScene" uid="uid://df8xgge2wjrcb" path="res://scenes/tileset-tb-copied!.tscn" id="4_sj5te"]
-[ext_resource type="Script" uid="uid://by7miy0yqkhos" path="res://scenes/exit_ladder.gd" id="5_t6bmd"]
+[ext_resource type="Script" uid="uid://by7miy0yqkhos" path="res://scripts/exit_ladder.gd" id="5_t6bmd"]
 [ext_resource type="PackedScene" uid="uid://d3duyjui5y1aj" path="res://scenes/player.tscn" id="6_d7a6c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cefh6"]
@@ -17,6 +17,7 @@ size = Vector2(20, 27.424244)
 [node name="scene_1" type="Node2D" unique_id=395208896]
 
 [node name="player_1" type="CharacterBody2D" parent="." unique_id=1236114238]
+visible = false
 z_index = 1
 position = Vector2(462, 514)
 scale = Vector2(0.4, 0.4)
@@ -36,6 +37,7 @@ offset_right = 4.0
 offset_bottom = -73.0
 
 [node name="player_2" type="CharacterBody2D" parent="." unique_id=1872515700]
+visible = false
 z_index = 1
 position = Vector2(929, 518)
 scale = Vector2(0.4, 0.4)
@@ -67,3 +69,9 @@ shape = SubResource("RectangleShape2D_cefh6")
 
 [node name="player" parent="." unique_id=1204618469 instance=ExtResource("6_d7a6c")]
 position = Vector2(228, 329)
+
+[connection signal="area_entered" from="exit_ladder" to="player" method="_on_exit_ladder_area_entered"]
+[connection signal="body_entered" from="exit_ladder" to="player" method="_on_exit_ladder_body_entered"]
+[connection signal="area_entered" from="player/detect" to="exit_ladder" method="_on_detect_area_entered"]
+
+[editable path="player"]

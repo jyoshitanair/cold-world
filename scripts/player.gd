@@ -31,9 +31,6 @@ func _physics_process(delta: float) -> void:
 				child.get_node("warmthInd").visible = true
 		if (playerLeft and playerRight != null):
 			var dist = global_position.distance_to(playerRight.global_position)
-			if (dist > 1152):
-				dist = 1152
-			#print(dist)
 			warmth = dist/200
 			var col = $warmthInd.modulate
 			col.r = warmth

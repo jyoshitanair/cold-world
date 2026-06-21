@@ -23,10 +23,3 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
-
-func _on_exit_ladder_area_entered(area: Area2D) -> void:
-	if area.is_in_group("exit_ladder"):
-		print("ooo")
-	else:
-		return

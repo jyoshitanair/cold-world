@@ -33,6 +33,9 @@ func _on_body_entered(body: Node2D) -> void:
 			elif Manager.current_level == 2:
 				Manager.current_level = 3
 				get_tree().call_deferred("change_scene_to_file", "res://scenes/level_3.tscn")
+			elif Manager.current_level == 3:
+				Manager.current_level = 4
+				get_tree().call_deferred("change_scene_to_file", "res://scenes/boss-fight.tscn")
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):

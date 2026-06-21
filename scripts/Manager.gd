@@ -19,7 +19,9 @@ var player_list = []
 var score = 0 
 var entered_once = false
 var dialog = 0
-var text_array = ["no","sjkfjladjhkjhjkkhjhjkhjkhhjhjhkhjhkjf","ksjdlkfjslf"]
+var text_array = ["It’s been a long time since Jelly and Bean have been home.",
+"As the youngest two there, life had been a bit too boring for their liking, and going off to explore the world had been exhilarating.",
+"Even then, their hearts hold something special for the place where they grew up, and coming home will always be something they look forward to."]
 var exit_ladder_1_entered = false
 var exit_ladder_2_entered = false
 var level_1_easiness = 1

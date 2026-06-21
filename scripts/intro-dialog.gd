@@ -35,11 +35,17 @@ func _process(delta: float) -> void:
 					text_array_index = 0
 					Manager.dialog +=1
 					if Manager.dialog ==1:
-						Manager.text_array = ["l","o","p"]
+						Manager.text_array = ["But it seems to be colder than they remember?",
+						"Bean’s old bean planting grounds have been replaced with frosted bare earth, and Jelly’s jam-making machines have been frozen over.",
+						"What had happened in the time they had been gone"]
 					if Manager.dialog ==2:
-						Manager.text_array = ["lasd","oasdf","padsf"]
+						Manager.text_array = ["The last letter they had received had been normal. But that had been 6 months ago.",
+						"And since then, their hometown had been stuck in a permanent winter, too cold to function.",
+						"Who could have thought that this strange state, abnormal as it was, would even manage to completely derail mail services and have isolated their hometown from the rest of the world?"]
 					if Manager.dialog ==3:
-						Manager.text_array = ["lwerwer","owerwerwer","pwerwerwerwer"]
+						Manager.text_array = ["Jelly and Bean, with their young spry bodies, are their town’s last hope to figure out what is going on.",
+						"The mountain is their only clue. Can they figure out and save everyone in time, or will their home be cold forever?",
+						"Luckily, these two are seasoned adventurers. Hopefully, their experience will aid them here..."]
 					if Manager.dialog ==4:
 						get_tree().change_scene_to_file("res://scenes/buffs1.tscn")
 						return

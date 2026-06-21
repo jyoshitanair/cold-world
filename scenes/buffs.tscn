@@ -24,7 +24,7 @@ corner_radius_bottom_left = 60
 
 [node name="Buffs" type="Node2D" unique_id=1305887323]
 script = ExtResource("1_lwdrh")
-power_percent1 = ["jackpot", 0.1]
+power_percent1 = ["hot_potato", true]
 power_percent2 = ["double_or_nothing", 0.1]
 power_percent3 = ["jump_multiplier", 0.1]
 

@@ -9,6 +9,7 @@ offset_left = 312.0
 offset_top = 16.0
 offset_right = 872.0
 offset_bottom = 51.0
+max_value = 40.0
 texture_under = ExtResource("1_58c75")
 texture_progress = ExtResource("2_but5r")
 script = ExtResource("3_r330t")

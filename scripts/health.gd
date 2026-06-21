@@ -1,6 +1,6 @@
 class_name Health extends TextureProgressBar
 
-@export var maxHealth = 100
+@export var maxHealth = 40
 var health = maxHealth
 
 var damage = .1
@@ -11,7 +11,7 @@ var distBuff:float = 1
 
 var playerLeft:Player
 
-signal death
+var death = false
 
 func loseHealth() -> void:
 	health -= damage * damageMult * distBuff * warmthBuff
@@ -25,15 +25,12 @@ func loseHealth() -> void:
 	)
 	
 	if (health == 0):
-		death.emit()
+		death = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Manager.hot_potato:
-		maxHealth *= 2 
-		damageMult = 2
-	else:
-		damageMult = 1
+		maxHealth *= 0.9
 	health = maxHealth
 	
 	$Timer.start()

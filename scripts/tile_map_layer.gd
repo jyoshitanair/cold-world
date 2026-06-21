@@ -30,4 +30,8 @@ func check_tile_2(col_pos,collider) -> void:
 		if group == "green_pressure_plate":
 			if player_2 == collider:
 				print("Pressure plate pressed")
+				var target_pos = Vector2i(6, 3)
+				var source_id = get_cell_source_id(target_pos)
+				var atlas_coords = get_cell_atlas_coords(target_pos)
+				set_cell(target_pos, source_id, atlas_coords, 1)
 				

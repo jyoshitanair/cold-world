@@ -5,6 +5,14 @@
 [ext_resource type="Script" uid="uid://bstuhls1ydxsw" path="res://scripts/tile_map_layer.gd" id="2_pbc48"]
 [ext_resource type="Texture2D" uid="uid://dlcvs6jxu3qmm" path="res://assets/snow.png" id="2_wo48x"]
 [ext_resource type="PackedScene" uid="uid://d3duyjui5y1aj" path="res://scenes/player.tscn" id="3_pbc48"]
+[ext_resource type="Script" uid="uid://tgnolmqrnm7u" path="res://scripts/exit_ladder_1.gd" id="6_y0kc7"]
+[ext_resource type="Script" uid="uid://by7miy0yqkhos" path="res://scripts/exit_ladder_2.gd" id="7_ne2mo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6cvei"]
+size = Vector2(50, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_que50"]
+size = Vector2(20, 27.424244)
 
 [node name="Level2" type="Node2D" unique_id=2111030488]
 
@@ -31,13 +39,44 @@ scale = Vector2(0.4, 0.4)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=636405592 groups=["tileset"]]
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAAAAsAAAAHAAcAAAABAAsAAAAEAAkAAAACAAsAAAAEAAkAAAADAAsAAAAEAAkAAAAEAAsAAAAEAAkAAAAFAAsAAAAEAAkAAAAGAAsAAAAEAAkAAAAHAAsAAAAEAAkAAAAIAAsAAAAEAAkAAAAKAAsAAAAEAAkAAAAOAAsAAAAEAAkAAAAPAAsAAAAEAAkAAAAQAAsAAAAEAAkAAAARAAsAAAAEAAkAAAASAAsAAAAEAAkAAAATAAsAAAAEAAkAAAAUAAsAAAAHAAcAAAAJAAsAAAAEAAkAAAALAAsAAAAEAAkAAAAMAAsAAAAEAAkAAAANAAsAAAAEAAkAAAAOAAkABAAAAAAAAAARAAIAAAADAAkAAAASAAIAAAAEAAkAAAATAAIAAAAEAAkAAAAUAAIAAAAEAAkAAAADAAIAAAAFAAkAAAACAAIAAAAEAAkAAAABAAIAAAAEAAkAAAAAAAIAAAAEAAkAAAATAAEABwAAAAAAAAATAAAABwAAAAAAAAABAAEACAAAAAAAAAABAAAACAAAAAAAAAAPAAkABAACAAAAAAAIAAoAAAACAAMAAAAGAAgAAAAFAAkAAAAFAAgAAAAEAAkAAAAEAAgAAAADAAkAAAAIAAYAAAADAAkAAAAKAAQAAAADAAkAAAAJAAYAAAAFAAkAAAALAAQAAAAFAAkAAAARAAEACQAAAAAAAAAGAAMACgAAAAAAAAALAAoACQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAsAAAAEAAkAAAABAAsAAAAEAAkAAAACAAsAAAAEAAkAAAADAAsAAAAEAAkAAAAEAAsAAAAEAAkAAAAFAAsAAAAEAAkAAAAGAAsAAAAEAAkAAAAHAAsAAAAEAAkAAAAIAAsAAAAEAAkAAAAKAAsAAAAEAAkAAAAOAAsAAAAEAAkAAAAPAAsAAAAEAAkAAAAQAAsAAAAEAAkAAAARAAsAAAAEAAkAAAASAAsAAAAEAAkAAAATAAsAAAAEAAkAAAAUAAsAAAAEAAkAAAAJAAsAAAAEAAkAAAALAAsAAAAEAAkAAAAMAAsAAAAEAAkAAAANAAsAAAAEAAkAAAAOAAkABAAAAAAAAAARAAIAAAADAAkAAAASAAIAAAAEAAkAAAATAAIAAAAEAAkAAAAUAAIAAAAEAAkAAAADAAIAAAAFAAkAAAACAAIAAAAEAAkAAAABAAIAAAAEAAkAAAAAAAIAAAAEAAkAAAATAAEABwAAAAAAAAATAAAABwAAAAAAAAABAAEACAAAAAAAAAABAAAACAAAAAAAAAAPAAkABAACAAAAAAAIAAoAAAACAAMAAAAGAAgAAAAFAAkAAAAFAAgAAAAEAAkAAAAEAAgAAAADAAkAAAAIAAYAAAADAAkAAAAKAAQAAAADAAkAAAAJAAYAAAAFAAkAAAALAAQAAAAFAAkAAAARAAEACQAAAAAAAAAGAAMACgAAAAAAAAA=")
 tile_set = ExtResource("1_jm1iu")
 script = ExtResource("2_pbc48")
 
 [node name="player" parent="." unique_id=1204618469 groups=["jelly", "player"] instance=ExtResource("3_pbc48")]
 position = Vector2(958, 548)
+collision_layer = 3
+collision_mask = 3
 playerLeft = true
 
 [node name="player2" parent="." unique_id=1740869795 groups=["bean", "player"] instance=ExtResource("3_pbc48")]
 position = Vector2(1083, 545)
+collision_layer = 5
+collision_mask = 5
+
+[node name="exit_ladder_1" type="Area2D" parent="." unique_id=670353953 groups=["exit_ladder"]]
+position = Vector2(1093, 56)
+scale = Vector2(0.39999998, 1.4)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("6_y0kc7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit_ladder_1" unique_id=1059938547]
+scale = Vector2(2.88, 3.96)
+shape = SubResource("RectangleShape2D_6cvei")
+
+[node name="exit_ladder_2" type="Area2D" parent="." unique_id=708945030 groups=["exit_ladder"]]
+position = Vector2(58, 22)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("7_ne2mo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit_ladder_2" unique_id=1038567099]
+position = Vector2(28, 32)
+scale = Vector2(2.88, 3.9599998)
+shape = SubResource("RectangleShape2D_que50")
+
+[connection signal="body_entered" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_entered"]
+[connection signal="body_exited" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_exited"]
+[connection signal="body_entered" from="exit_ladder_2" to="exit_ladder_2" method="_on_body_entered"]
+[connection signal="body_exited" from="exit_ladder_2" to="exit_ladder_2" method="_on_body_exited"]

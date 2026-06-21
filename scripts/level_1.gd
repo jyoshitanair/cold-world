@@ -1,4 +1,4 @@
-extends Node2D
+extends Level
 @onready var specific: Label = $tutorial/specific
 @onready var health: Label = $tutorial/health
 @onready var tutorial: Control = $tutorial
@@ -7,6 +7,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	super()
 	tutorial.visible = true
 	specific.hide()
 	health.visible = false

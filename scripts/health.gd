@@ -11,7 +11,7 @@ var distBuff:float = 1
 
 var playerLeft:Player
 
-var death = false
+signal death
 
 func loseHealth() -> void:
 	health -= damage * damageMult * distBuff * warmthBuff
@@ -25,10 +25,14 @@ func loseHealth() -> void:
 	)
 	
 	if (health == 0):
-		death = true
+		print("pls die")
+		death.emit()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	self.max_value = maxHealth
+	
 	if Manager.hot_potato[0]:
 		maxHealth *= 0.9
 	health = maxHealth
@@ -56,5 +60,6 @@ func _process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	loseHealth()
-	$Timer.start()
+	if (health > 0):
+		$Timer.start()
 	pass # Replace with function body.

@@ -3,12 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://68b8twgm2loq" path="res://assets/sprite_sheet (3).png" id="1_fcvr3"]
 [ext_resource type="Texture2D" uid="uid://dn2sl626a4uqx" path="res://assets/red_tile.png" id="2_7lii3"]
 [ext_resource type="Texture2D" uid="uid://dos53ipogtrg4" path="res://assets/Illustration116 2.png" id="2_beawo"]
+[ext_resource type="Texture2D" uid="uid://8h1syxtsliu4" path="res://assets/green_platform.png" id="3_qscaq"]
 [ext_resource type="Texture2D" uid="uid://wih7rajhelwo" path="res://assets/blue_tile.png" id="3_uyjym"]
 [ext_resource type="Texture2D" uid="uid://b32wpog6f7xp0" path="res://assets/Illustration116.png" id="5_fk0lh"]
 [ext_resource type="Texture2D" uid="uid://kfvi0kxueb17" path="res://assets/Illustration116 3.png" id="6_155r3"]
 [ext_resource type="Texture2D" uid="uid://bxdrcc82aptda" path="res://assets/Illustration116 4.png" id="7_ls0l7"]
 [ext_resource type="Texture2D" uid="uid://bg7j7e7lssa1c" path="res://assets/ladder_v1.png" id="8_fk0lh"]
 [ext_resource type="Texture2D" uid="uid://dm60x4hm51sj2" path="res://assets/jelly_ladder.png" id="9_155r3"]
+[ext_resource type="Texture2D" uid="uid://dlb7alsrbg465" path="res://assets/green_pressure_plate.png" id="11_lgcvb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4sp5e"]
 texture = ExtResource("1_fcvr3")
@@ -192,6 +194,12 @@ texture_region_size = Vector2i(70, 70)
 2:0/0 = 0
 2:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqla6"]
+texture = ExtResource("3_qscaq")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(35, 35, -35, 35, -35, -35, 35, -35)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_soa28"]
 texture = ExtResource("2_7lii3")
 texture_region_size = Vector2i(64, 64)
@@ -250,6 +258,13 @@ texture = ExtResource("9_155r3")
 texture_region_size = Vector2i(70, 70)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqrcl"]
+texture = ExtResource("11_lgcvb")
+texture_region_size = Vector2i(70, 70)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25.895313, 24.242424, -35, 35, 35, 35, 25.895317, 24.242424)
+0:0/0/custom_data_0 = "green_pressure_plate"
+
 [resource]
 tile_size = Vector2i(70, 70)
 physics_layer_0/collision_layer = 1
@@ -268,3 +283,5 @@ sources/5 = SubResource("TileSetAtlasSource_ol6ym")
 sources/6 = SubResource("TileSetAtlasSource_g8n3q")
 sources/7 = SubResource("TileSetAtlasSource_155r3")
 sources/8 = SubResource("TileSetAtlasSource_ls0l7")
+sources/9 = SubResource("TileSetAtlasSource_yqrcl")
+sources/10 = SubResource("TileSetAtlasSource_uqla6")

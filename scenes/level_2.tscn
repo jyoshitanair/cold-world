@@ -1,17 +1,37 @@
 [gd_scene format=4 uid="uid://c7onh4tvoutno"]
 
+[ext_resource type="Texture2D" uid="uid://cpc3k3g5gyy0e" path="res://assets/mountain.png" id="1_b4j7a"]
 [ext_resource type="TileSet" uid="uid://b5rjtnca4eya1" path="res://assets/tileset.tres" id="1_jm1iu"]
 [ext_resource type="Script" uid="uid://bstuhls1ydxsw" path="res://scripts/tile_map_layer.gd" id="2_pbc48"]
+[ext_resource type="Texture2D" uid="uid://dlcvs6jxu3qmm" path="res://assets/snow.png" id="2_wo48x"]
 [ext_resource type="PackedScene" uid="uid://d3duyjui5y1aj" path="res://scenes/player.tscn" id="3_pbc48"]
 
 [node name="Level2" type="Node2D" unique_id=2111030488]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1143762844]
+position = Vector2(577, 327)
+scale = Vector2(1.0069444, 1.0154321)
+texture = ExtResource("1_b4j7a")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=316222513]
+position = Vector2(-8, -24.3917)
+scale = Vector2(1.0069444, 1.0691103)
+texture = ExtResource("2_wo48x")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=732566183]
+offset_left = -716.0
+offset_top = -414.0
+offset_right = 683.0
+offset_bottom = 382.0
+color = Color(0.077418126, 0.108186685, 0.29359287, 0.69411767)
+metadata/_edit_use_anchors_ = true
 
 [node name="Node2D" type="Node2D" parent="." unique_id=1393924341]
 scale = Vector2(0.4, 0.4)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=636405592 groups=["tileset"]]
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAAAAsAAAAHAAcAAAABAAsAAAAEAAkAAAACAAsAAAAEAAkAAAADAAsAAAAEAAkAAAAEAAsAAAAEAAkAAAAFAAsAAAAEAAkAAAAGAAsAAAAEAAkAAAAHAAsAAAAEAAkAAAAIAAsAAAAEAAkAAAAKAAsAAAAEAAkAAAAOAAsAAAAEAAkAAAAPAAsAAAAEAAkAAAAQAAsAAAAEAAkAAAARAAsAAAAEAAkAAAASAAsAAAAEAAkAAAATAAsAAAAEAAkAAAAUAAsAAAAHAAcAAAAJAAsAAAAEAAkAAAALAAsAAAAEAAkAAAAMAAsAAAAEAAkAAAANAAsAAAAEAAkAAAAOAAkABAAAAAAAAAARAAIAAAADAAkAAAASAAIAAAAEAAkAAAATAAIAAAAEAAkAAAAUAAIAAAAEAAkAAAADAAIAAAAFAAkAAAACAAIAAAAEAAkAAAABAAIAAAAEAAkAAAAAAAIAAAAEAAkAAAATAAEABwAAAAAAAAATAAAABwAAAAAAAAABAAEACAAAAAAAAAABAAAACAAAAAAAAAAPAAkABAACAAAAAAAIAAoAAAACAAMAAAAGAAgAAAAFAAkAAAAFAAgAAAAEAAkAAAAEAAgAAAADAAkAAAAIAAYAAAADAAkAAAAKAAQAAAADAAkAAAAJAAYAAAAFAAkAAAALAAQAAAAFAAkAAAA=")
+tile_map_data = PackedByteArray("AAAAAAsAAAAHAAcAAAABAAsAAAAEAAkAAAACAAsAAAAEAAkAAAADAAsAAAAEAAkAAAAEAAsAAAAEAAkAAAAFAAsAAAAEAAkAAAAGAAsAAAAEAAkAAAAHAAsAAAAEAAkAAAAIAAsAAAAEAAkAAAAKAAsAAAAEAAkAAAAOAAsAAAAEAAkAAAAPAAsAAAAEAAkAAAAQAAsAAAAEAAkAAAARAAsAAAAEAAkAAAASAAsAAAAEAAkAAAATAAsAAAAEAAkAAAAUAAsAAAAHAAcAAAAJAAsAAAAEAAkAAAALAAsAAAAEAAkAAAAMAAsAAAAEAAkAAAANAAsAAAAEAAkAAAAOAAkABAAAAAAAAAARAAIAAAADAAkAAAASAAIAAAAEAAkAAAATAAIAAAAEAAkAAAAUAAIAAAAEAAkAAAADAAIAAAAFAAkAAAACAAIAAAAEAAkAAAABAAIAAAAEAAkAAAAAAAIAAAAEAAkAAAATAAEABwAAAAAAAAATAAAABwAAAAAAAAABAAEACAAAAAAAAAABAAAACAAAAAAAAAAPAAkABAACAAAAAAAIAAoAAAACAAMAAAAGAAgAAAAFAAkAAAAFAAgAAAAEAAkAAAAEAAgAAAADAAkAAAAIAAYAAAADAAkAAAAKAAQAAAADAAkAAAAJAAYAAAAFAAkAAAALAAQAAAAFAAkAAAARAAEACQAAAAAAAAAGAAMACgAAAAAAAAALAAoACQAAAAAAAAA=")
 tile_set = ExtResource("1_jm1iu")
 script = ExtResource("2_pbc48")
 
@@ -19,5 +39,5 @@ script = ExtResource("2_pbc48")
 position = Vector2(958, 548)
 playerLeft = true
 
-[node name="player2" parent="." unique_id=1740869795 groups=["player"] instance=ExtResource("3_pbc48")]
+[node name="player2" parent="." unique_id=1740869795 groups=["bean", "player"] instance=ExtResource("3_pbc48")]
 position = Vector2(1083, 545)

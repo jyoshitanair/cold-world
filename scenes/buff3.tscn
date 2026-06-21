@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://8fombwmsmw4a"]
+
+[ext_resource type="PackedScene" uid="uid://c5tplv82p1ylm" path="res://scenes/buffs.tscn" id="1_mfml6"]
+
+[node name="Buff3" type="Node2D" unique_id=1438245656]
+
+[node name="Buffs" parent="." unique_id=1305887323 instance=ExtResource("1_mfml6")]
+text1 = "unity"
+text2 = "jackpot"
+text3 = "double jump"
+level_path = "res://scenes/level_2.tscn"
+mini_text1 = "when you are closer to your pookie bear- the speed you freeze at will slow down by  a max of 30% "
+mini_text2 = "when you are closer to your pookie bear- the speed you freeze at will slow down by  a max of 30% "
+mini_text3 = "You have been granted the ability to jump midair :0"
+power_percent1 = ["unity", 0.9]
+power_percent2 = ["jackpot", 2.0]
+power_percent3 = ["double_jump", 0.05]

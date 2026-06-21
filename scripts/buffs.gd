@@ -41,7 +41,7 @@ kfjaskdlfj kdljfkasjd333"
 @export var power_percent2 = ["speed", false]
 @export var power_percent3 = ["speed", false]
 var arrary_powers 
-#used: speed,jump_multiplier,hot_potato,
+#used: speed,jump_multiplier,hot_potato,jackpot,unity,warmth
 var powerup_array = ["double_or_nothing","speed_multiplier","warmth","jackpot","jump_multiplier", "hot_potato", "double_jump","unity"]
 var on1 = false
 var on2 = false

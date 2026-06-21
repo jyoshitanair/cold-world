@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bl35w6mwu6w7" path="res://scripts/leaderboard.gd" id="1_mrg81"]
 
+[sub_resource type="Theme" id="Theme_4da66"]
+default_font_size = 30
+
 [node name="Leaderboard" type="Node2D" unique_id=823480092]
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1667838147]
@@ -12,12 +15,14 @@ color = Color(0, 0, 0, 1)
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=670886255]
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 95.0
+offset_left = 3.0
 offset_right = 1154.0
 offset_bottom = 83.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(200, 0)
 theme_override_constants/separation = 170
 
 [node name="Label" type="Label" parent="HBoxContainer" unique_id=1957029422]
@@ -43,5 +48,9 @@ offset_bottom = 650.0
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer" unique_id=1675226320]
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(200, 0)
+theme = SubResource("Theme_4da66")
+theme_override_constants/h_separation = 180
 columns = 3
 script = ExtResource("1_mrg81")

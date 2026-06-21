@@ -11,6 +11,8 @@ var player_name = "heyhey"
 var player_list = []
 var score = 0 
 var entered_once = false
+var dialog = 0
+var text_array = ["no","sjkfjladjhkjhjkkhjhjkhjkhhjhjhkhjhkjf","ksjdlkfjslf"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SilentWolf.configure({

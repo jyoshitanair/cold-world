@@ -15,7 +15,6 @@ var entered_once = false
 var can_click= false
 @onready var clicker: Label = $clicker
 func _ready() -> void:
-	circle.global_position
 	target = start.global_position
 	await get_tree().create_timer(0.7).timeout
 	loaded = true
@@ -27,6 +26,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("click") and can_click:
 		can_move = false
+		tween.kill()
 		var colliders = body.get_overlapping_areas()
 		var collider
 		if colliders.size() >= 2:
@@ -74,9 +74,8 @@ func tweeny() -> void:
 		after()
 func after() -> void: 
 	if can_move:
-		if not(tween and tween.is_valid()): 
-			if circle.position == start.global_position:
-				target = end.global_position
-			else:
-				target = start.global_position
-			tweeny()
+		if target == start.global_position:
+			target = end.global_position
+		else:
+			target = start.global_position
+		tweeny()

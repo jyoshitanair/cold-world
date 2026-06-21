@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dd0in41c5dfwh"]
+
+[ext_resource type="Script" uid="uid://nweitmjp1pbc" path="res://scripts/intro-dialog.gd" id="1_yjqpq"]
+[ext_resource type="Texture2D" uid="uid://cpc3k3g5gyy0e" path="res://assets/mountain.png" id="2_4bx60"]
+
+[node name="Intro" type="Node2D" unique_id=2131786960]
+script = ExtResource("1_yjqpq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1732279298]
+position = Vector2(576, 324)
+texture = ExtResource("2_4bx60")
+
+[node name="main_text" type="RichTextLabel" parent="." unique_id=808593339]
+offset_right = 1151.0
+offset_bottom = 647.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 100
+text = "Main text?!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="fade" type="ColorRect" parent="." unique_id=302191180]
+visible = false
+offset_right = 1153.0
+offset_bottom = 648.0

@@ -1,5 +1,10 @@
 extends Node
-<<<<<<< HEAD
+#ADD UP ALL THE LEVEL CALCS AND THEN SUBTRACT (Deaths * 15)
+#Score = Max(0, ((45 - Time) * 27 * Level) - (Deaths * 15 * Level) - (Easiness * 5 * Level))
+#finding score
+var level_one_calc = 0 
+var level_two_calc = 0 
+var level_three_calc = 0 
 var speed_multiplier = [false,0.0]
 var warmth = [false,0.0]
 var jackpot = [false,0.0]
@@ -7,15 +12,6 @@ var jump_multiplier = [false,0.0]
 var hot_potato = [false,0.0]
 var double_jump = [false,0.0]
 var unity = [false,0.0]
-=======
-var speed_multiplier = [false,0.1]
-var warmth = [false,0.1]
-var jackpot = [false,0.1]
-var jump_multiplier = [false,0.1]
-var hot_potato = [false,0.1]
-var double_jump = [false,0.1]
-var unity = [false,0.1]
->>>>>>> d2e2f0f650b19bc30fa2e30bd10dbd7c9d633ca7
 var death_count = 0 
 var player_name = "heyhey"
 var player_list = []

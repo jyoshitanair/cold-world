@@ -1,18 +1,19 @@
 [gd_scene format=3 uid="uid://de4lr7874dddr"]
 
 [ext_resource type="Script" uid="uid://dplqrsgxxykix" path="res://scripts/jackpot.gd" id="1_4whi5"]
+[ext_resource type="Texture2D" uid="uid://duagkn2wmwhlu" path="res://assets/jackpotBarHarder.png" id="2_ths4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8l2hk"]
-size = Vector2(237, 70)
+size = Vector2(200, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rid7q"]
-size = Vector2(88, 70)
+size = Vector2(92, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqrfi"]
-size = Vector2(93, 72)
+size = Vector2(91, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3gqeq"]
-size = Vector2(304, 70)
+size = Vector2(376, 70)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pom5n"]
 size = Vector2(49, 85)
@@ -33,50 +34,53 @@ script = ExtResource("1_4whi5")
 offset_right = 1186.0
 offset_bottom = 672.0
 mouse_filter = 1
-color = Color(0.73773474, 0.49650365, 0.29314828, 1)
+color = Color(0.41540003, 0.5851333, 0.67, 1)
 
 [node name="Label" type="Label" parent="." unique_id=142917850]
-offset_left = 6.0
-offset_top = 18.0
-offset_right = 1152.0
-offset_bottom = 87.0
+offset_left = 24.0
+offset_top = 168.0
+offset_right = 1170.0
+offset_bottom = 413.0
 mouse_filter = 1
 theme_override_font_sizes/font_size = 50
-text = "jackpot"
+text = "Jackpot: Double or Nothing!
+
+Get both buffs, or nothing at all
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ColorRect2" type="ColorRect" parent="." unique_id=872608460]
+[node name="ColorRect2" type="TextureRect" parent="." unique_id=242236864]
 offset_left = 116.0
 offset_top = 546.0
 offset_right = 1076.0
 offset_bottom = 616.0
-mouse_filter = 1
+texture = ExtResource("2_ths4b")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=636591058 groups=["yellow"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=947353173]
-position = Vector2(328.5, 582)
+position = Vector2(308, 581)
 shape = SubResource("RectangleShape2D_8l2hk")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1187817847]
-position = Vector2(868.5, 582)
+position = Vector2(884, 581)
 shape = SubResource("RectangleShape2D_8l2hk")
 
 [node name="Area2D2" type="Area2D" parent="." unique_id=185976353 groups=["red"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1891716588]
-position = Vector2(1032, 582)
+position = Vector2(1030, 581)
 shape = SubResource("RectangleShape2D_rid7q")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2" unique_id=870884022 groups=["red"]]
-position = Vector2(163.5, 582)
+position = Vector2(162.5, 581)
 shape = SubResource("RectangleShape2D_cqrfi")
 
 [node name="Area2D3" type="Area2D" parent="." unique_id=602329436 groups=["green"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" unique_id=503902278]
-position = Vector2(598, 582)
+position = Vector2(596, 581)
 shape = SubResource("RectangleShape2D_3gqeq")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=507697277]

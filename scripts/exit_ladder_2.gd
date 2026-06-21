@@ -27,12 +27,12 @@ func _on_body_entered(body: Node2D) -> void:
 			Manager.exit_ladder_2_entered = false
 			if Manager.current_level == 1:
 				Manager.current_level = 2
-				get_tree().call_deferred("change_scene_to_file", "res://scenes/level_2.tscn")
+				get_tree().call_deferred("change_scene_to_file", "res://scenes/boosts2.tscn")
 				Manager.level_one_calc = max(0, ((45 - Health.health) * 27))
 				print(Manager.level_one_calc)
 			elif Manager.current_level == 2:
 				Manager.current_level = 3
-				get_tree().call_deferred("change_scene_to_file", "res://scenes/level_3.tscn")
+				get_tree().call_deferred("change_scene_to_file", "res://scenes/buff3.tscn")
 			elif Manager.current_level == 3:
 				Manager.current_level = 4
 				get_tree().call_deferred("change_scene_to_file", "res://scenes/boss-fight.tscn")

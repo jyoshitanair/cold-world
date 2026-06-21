@@ -18,7 +18,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	health.value = yeti_health
 	if yeti_health <= 0:
-		Manager.final_time = total_time
 		get_tree().change_scene_to_file("res://scenes/ending.tscn")
 		
 	total_time += delta

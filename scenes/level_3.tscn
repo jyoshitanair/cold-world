@@ -1,0 +1,89 @@
+[gd_scene format=4 uid="uid://c6pxtd4bg0ys0"]
+
+[ext_resource type="Texture2D" uid="uid://cpc3k3g5gyy0e" path="res://assets/mountain.png" id="1_wae8j"]
+[ext_resource type="Texture2D" uid="uid://dlcvs6jxu3qmm" path="res://assets/snow.png" id="2_ha73p"]
+[ext_resource type="TileSet" uid="uid://b5rjtnca4eya1" path="res://assets/tileset.tres" id="3_vcx5n"]
+[ext_resource type="Script" uid="uid://bstuhls1ydxsw" path="res://scripts/tile_map_layer.gd" id="4_56dhn"]
+[ext_resource type="PackedScene" uid="uid://d3duyjui5y1aj" path="res://scenes/player.tscn" id="5_ax3dk"]
+[ext_resource type="Script" uid="uid://tgnolmqrnm7u" path="res://scripts/exit_ladder_1.gd" id="6_q2dsb"]
+[ext_resource type="Script" uid="uid://by7miy0yqkhos" path="res://scripts/exit_ladder_2.gd" id="7_p3r0x"]
+[ext_resource type="PackedScene" uid="uid://12f2vv1qwhk1" path="res://scenes/health.tscn" id="8_5xqnf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_una4e"]
+size = Vector2(50, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ema3p"]
+size = Vector2(20, 27.424244)
+
+[node name="Level3" type="Node2D" unique_id=1344286360]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1301102577]
+position = Vector2(577, 327)
+scale = Vector2(1.0069444, 1.0154321)
+texture = ExtResource("1_wae8j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=856845976]
+position = Vector2(-8, -24.3917)
+scale = Vector2(1.0069444, 1.0691103)
+texture = ExtResource("2_ha73p")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=1730549419]
+offset_left = -716.0
+offset_top = -414.0
+offset_right = 683.0
+offset_bottom = 382.0
+color = Color(0.077418126, 0.108186685, 0.29359287, 0.69411767)
+metadata/_edit_use_anchors_ = true
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1376442477]
+scale = Vector2(0.4, 0.4)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Node2D" unique_id=129437733 groups=["tileset"]]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAAAAsAAAAEAAkAAAABAAsAAAAEAAkAAAACAAsAAAAEAAkAAAADAAsAAAAEAAkAAAAEAAsAAAAEAAkAAAAFAAsAAAAEAAkAAAAGAAsAAAAEAAkAAAAHAAsAAAAEAAkAAAAIAAsAAAAEAAkAAAAKAAsAAAAEAAkAAAAOAAsAAAAEAAkAAAAPAAsAAAAEAAkAAAAQAAsAAAAEAAkAAAARAAsAAAAEAAkAAAASAAsAAAAEAAkAAAATAAsAAAAEAAkAAAAUAAsAAAAEAAkAAAAJAAsAAAAEAAkAAAALAAsAAAAEAAkAAAAMAAsAAAAEAAkAAAANAAsAAAAEAAkAAAAOAAkABAAAAAAAAAARAAIAAAADAAkAAAASAAIAAAAEAAkAAAATAAIAAAAEAAkAAAAUAAIAAAAEAAkAAAADAAIAAAAFAAkAAAACAAIAAAAEAAkAAAABAAIAAAAEAAkAAAAAAAIAAAAEAAkAAAATAAEABwAAAAAAAAATAAAABwAAAAAAAAABAAEACAAAAAAAAAABAAAACAAAAAAAAAAPAAkABAACAAAAAAAIAAoAAAACAAMAAAAGAAgAAAAFAAkAAAAFAAgAAAAEAAkAAAAEAAgAAAADAAkAAAAIAAYAAAADAAkAAAAKAAQAAAADAAkAAAAJAAYAAAAFAAkAAAALAAQAAAAFAAkAAAARAAEACQAAAAAAAAAGAAMACgAAAAAAAAA=")
+tile_set = ExtResource("3_vcx5n")
+script = ExtResource("4_56dhn")
+
+[node name="player" parent="." unique_id=1204618469 groups=["jelly", "player"] instance=ExtResource("5_ax3dk")]
+position = Vector2(958, 548)
+collision_layer = 3
+collision_mask = 3
+playerLeft = true
+
+[node name="player2" parent="." unique_id=1484712478 groups=["bean", "player"] instance=ExtResource("5_ax3dk")]
+position = Vector2(1083, 545)
+collision_layer = 5
+collision_mask = 5
+
+[node name="exit_ladder_1" type="Area2D" parent="." unique_id=1362475866 groups=["exit_ladder"]]
+position = Vector2(1093, 56)
+scale = Vector2(0.39999998, 1.4)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("6_q2dsb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit_ladder_1" unique_id=2003993757]
+scale = Vector2(2.88, 3.96)
+shape = SubResource("RectangleShape2D_una4e")
+
+[node name="exit_ladder_2" type="Area2D" parent="." unique_id=860256835 groups=["exit_ladder"]]
+position = Vector2(58, 22)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("7_p3r0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="exit_ladder_2" unique_id=713897285]
+position = Vector2(28, 32)
+scale = Vector2(2.88, 3.9599998)
+shape = SubResource("RectangleShape2D_ema3p")
+
+[node name="health" parent="." unique_id=157795596 instance=ExtResource("8_5xqnf")]
+offset_left = 305.0
+offset_top = 13.0
+offset_right = 865.0
+offset_bottom = 48.0
+
+[connection signal="body_entered" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_entered"]
+[connection signal="body_exited" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_exited"]
+[connection signal="body_entered" from="exit_ladder_2" to="exit_ladder_2" method="_on_body_entered"]
+[connection signal="body_exited" from="exit_ladder_2" to="exit_ladder_2" method="_on_body_exited"]

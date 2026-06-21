@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://c7onh4tvoutno"]
 
+[ext_resource type="Script" uid="uid://cxumx1grvr7yy" path="res://scripts/level_2.gd" id="1_6cvei"]
 [ext_resource type="Texture2D" uid="uid://cpc3k3g5gyy0e" path="res://assets/mountain.png" id="1_b4j7a"]
 [ext_resource type="TileSet" uid="uid://b5rjtnca4eya1" path="res://assets/tileset.tres" id="1_jm1iu"]
 [ext_resource type="Script" uid="uid://bstuhls1ydxsw" path="res://scripts/tile_map_layer.gd" id="2_pbc48"]
@@ -16,6 +17,7 @@ size = Vector2(50, 20)
 size = Vector2(20, 27.424244)
 
 [node name="Level2" type="Node2D" unique_id=2111030488]
+script = ExtResource("1_6cvei")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1143762844]
 position = Vector2(577, 327)

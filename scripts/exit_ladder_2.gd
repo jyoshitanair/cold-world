@@ -25,4 +25,14 @@ func _on_body_entered(body: Node2D) -> void:
 		if Manager.exit_ladder_1_entered == true:
 			Manager.exit_ladder_1_entered = false
 			Manager.exit_ladder_2_entered = false
-			get_tree().call_deferred("change_scene_to_file", "res://scenes/level_2.tscn")
+			if Manager.current_level == 1:
+				Manager.current_level = 2
+				get_tree().call_deferred("change_scene_to_file", "res://scenes/level_2.tscn")
+			elif Manager.current_level == 2:
+				Manager.current_level = 3
+				get_tree().call_deferred("change_scene_to_file", "res://scenes/level_3.tscn")
+
+func _on_body_exited(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		print("Left ladder 2")
+		Manager.exit_ladder_2_entered = false

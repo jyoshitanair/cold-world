@@ -28,6 +28,7 @@ var level_1_easiness = 1
 var jackpot_settings = []
 var level_path = "res://scenes/level_1.tscn"
 var jackpot_speed = 0.9
+var current_level = 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SilentWolf.configure({

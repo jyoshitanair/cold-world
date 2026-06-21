@@ -5,6 +5,7 @@ extends Node
 var level_one_calc = 0 
 var level_two_calc = 0 
 var level_three_calc = 0 
+var final_time = 0 
 var speed_multiplier = [false,0.0]
 var warmth = [false,0.0]
 var jackpot = [false,0.0]

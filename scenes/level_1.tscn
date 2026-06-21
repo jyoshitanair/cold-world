@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c3j6ukimtqjy3"]
 
 [ext_resource type="PackedScene" uid="uid://df8xgge2wjrcb" path="res://scenes/tileset-tb-copied!.tscn" id="1_5xbjy"]
+[ext_resource type="Texture2D" uid="uid://cpc3k3g5gyy0e" path="res://assets/mountain.png" id="1_pa8r4"]
+[ext_resource type="Texture2D" uid="uid://dlcvs6jxu3qmm" path="res://assets/snow.png" id="2_15mv3"]
 [ext_resource type="Script" uid="uid://tgnolmqrnm7u" path="res://scripts/exit_ladder_1.gd" id="2_fcfvj"]
 [ext_resource type="Script" uid="uid://by7miy0yqkhos" path="res://scripts/exit_ladder_2.gd" id="3_4nkto"]
 [ext_resource type="PackedScene" uid="uid://d3duyjui5y1aj" path="res://scenes/player.tscn" id="3_fcfvj"]
@@ -17,6 +19,21 @@ radius = 40.375
 height = 80.75
 
 [node name="scene_1" type="Node2D" unique_id=395208896]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=397694933]
+position = Vector2(573, 373)
+texture = ExtResource("1_pa8r4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=569507132]
+position = Vector2(-4, -45)
+texture = ExtResource("2_15mv3")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=145331879]
+offset_left = -610.0
+offset_top = -414.0
+offset_right = 611.0
+offset_bottom = 320.0
+color = Color(0.077418126, 0.108186685, 0.29359287, 0.69411767)
 
 [node name="TilesetTbCopied!" parent="." unique_id=1682306031 instance=ExtResource("1_5xbjy")]
 

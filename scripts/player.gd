@@ -22,13 +22,19 @@ func _ready() -> void:
 		if child is Player:
 			if child.playerLeft != true:
 				playerRight = child
+	
+	if playerLeft:
+		$AnimatedSprite2D.animation = "jam"
+	else:
+		$AnimatedSprite2D.animation = "bean"
 
 func _physics_process(delta: float) -> void:
 	# determine warmth through distance
 	if (Manager.unity):
 		for child in get_parent().get_children():
 			if child is Player:
-				child.get_node("warmthInd").visible = true
+				#child.get_node("warmthInd").visible = true
+				pass
 		if (playerLeft and playerRight != null):
 			var dist = global_position.distance_to(playerRight.global_position)
 			warmth = dist/200

@@ -2,16 +2,82 @@
 
 [ext_resource type="Texture2D" uid="uid://luq258vtismx" path="res://assets/icon.svg" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bojneie0woorh" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://brhv3a4ee48yv" path="res://assets/player/1000006302.png" id="3_fulsm"]
+[ext_resource type="Texture2D" uid="uid://dx4csy4t1rs1d" path="res://assets/player/1000006303.png" id="4_4r5pv"]
+[ext_resource type="Texture2D" uid="uid://dhowhlclm4abw" path="res://assets/player/1000006304.png" id="5_60mlk"]
+[ext_resource type="Texture2D" uid="uid://x22c1ah2uu3f" path="res://assets/player/1000006305.png" id="6_i4ail"]
+[ext_resource type="Texture2D" uid="uid://br2geebvsf02f" path="res://assets/player/1000006306.png" id="7_a38lo"]
+[ext_resource type="Texture2D" uid="uid://c0cht6tc3mcto" path="res://assets/player/1000006307.png" id="8_4ni07"]
+[ext_resource type="Texture2D" uid="uid://bjpww1t30ydc2" path="res://assets/player/1000006308.png" id="9_l71n6"]
+[ext_resource type="Texture2D" uid="uid://dch8ficlf3gq5" path="res://assets/player/1000006309.png" id="10_ke2ow"]
+[ext_resource type="Texture2D" uid="uid://cwggymaegplg4" path="res://assets/player/1000006317.png" id="11_ujl30"]
+[ext_resource type="Texture2D" uid="uid://chl0hm1oow5kt" path="res://assets/player/1000006316.png" id="12_31cv2"]
+[ext_resource type="Texture2D" uid="uid://3mjjs7o520l6" path="res://assets/player/1000006315.png" id="13_pf23h"]
+[ext_resource type="Texture2D" uid="uid://cgjmepbosv3b2" path="res://assets/player/1000006314.png" id="14_dt7fs"]
+[ext_resource type="Texture2D" uid="uid://dwsbb3pqf422h" path="res://assets/player/1000006313.png" id="15_wqfne"]
+[ext_resource type="Texture2D" uid="uid://syfc14ymn6x3" path="res://assets/player/1000006312.png" id="16_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://bgabe05oxbjey" path="res://assets/player/1000006311.png" id="17_gl8cc"]
+[ext_resource type="Texture2D" uid="uid://btx55sgmpmu7c" path="res://assets/player/1000006310.png" id="18_487ah"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_y85q1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_d2dbh"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_3vyb7")
+"texture": ExtResource("3_fulsm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4r5pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_60mlk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i4ail")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_a38lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4ni07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l71n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ke2ow")
 }],
 "loop": 1,
-"name": &"default",
-"speed": 5.0
+"name": &"bean",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_ujl30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_31cv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pf23h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_dt7fs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_wqfne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_wnwbv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_gl8cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_487ah")
+}],
+"loop": 1,
+"name": &"jam",
+"speed": 9.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2dbh"]
@@ -32,10 +98,12 @@ position = Vector2(2.3841858e-07, 7.9999995)
 scale = Vector2(0.9375, 0.9510869)
 texture = ExtResource("1_3vyb7")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=210619696]
-position = Vector2(2.7418137e-06, 1.7881393e-06)
-scale = Vector2(0.62500006, 0.62500006)
-sprite_frames = SubResource("SpriteFrames_y85q1")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=416506337]
+scale = Vector2(1.1428572, 1.1428572)
+sprite_frames = SubResource("SpriteFrames_d2dbh")
+animation = &"jam"
+autoplay = "jam"
+frame_progress = 0.564291
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=620317246]
 position = Vector2(-0.375, 0.43115616)

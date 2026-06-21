@@ -14,6 +14,7 @@ extends Node2D
 @onready var label1: Label = $label1/Label
 @onready var label2: Label = $label2/Label
 @onready var label3: Label = $label3/Label
+@export var jackpot_speed = 0.9
 @export var text1 = "fahhh"
 @export var text2 = "fahhh"
 @export var text3 = "fahhh"
@@ -95,6 +96,17 @@ func clicky(i) ->void:
 	var name1 = arrary_powers[i]
 	var powerup = name1[0]
 	if powerup == "jackpot":
+		var k = i + 1
+		if k >=3:
+			k = 0
+		var name2 = arrary_powers[k]
+		var m = i - 1
+		if m <=-1:
+			m = 2
+		var name3 = arrary_powers[m]
+		Manager.jackpot_settings = [name2,name3]
+		print(Manager.jackpot_settings)
+		Manager.jackpot_speed = jackpot_speed
 		get_tree().change_scene_to_file("res://scenes/jackpot.tscn")
 		return
 	if powerup == "double_or_nothing":

@@ -72,7 +72,7 @@ func tweeny() -> void:
 		tween = create_tween()
 		tween.set_trans(Tween.TRANS_QUAD)
 		tween.set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property(circle, "global_position", target, 0.5)
+		tween.tween_property(circle, "global_position", target, Manager.jackpot_speed)
 		await tween.finished
 		tween.kill()
 		after()

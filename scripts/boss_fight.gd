@@ -6,6 +6,7 @@ extends Node2D
 @onready var marker2: Marker2D = $player2/Marker2D
 @onready var label_2: Label = $Label2
 @onready var label: Label = $Label
+@onready var health: TextureProgressBar = $health
 
 var snowball_path = preload("res://scenes/snowball.tscn")
 var total_time = 0.0
@@ -15,9 +16,10 @@ func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
+	health.value = yeti_health
 	if yeti_health <= 0:
 		Manager.final_time = total_time
-		get_tree().change_scene_to_file("res://scenes/buffs.tscn")
+		get_tree().change_scene_to_file("res://scenes/ending.tscn")
 		
 	total_time += delta
 	var formatted_string: String = "%.2f" % total_time

@@ -20,7 +20,7 @@ radius = 40.375
 height = 80.75
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqrfi"]
-size = Vector2(540, 232)
+size = Vector2(540, 214)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rid7q"]
 size = Vector2(350.5, 284)
@@ -90,7 +90,6 @@ position = Vector2(-0.375, 0.43115616)
 shape = SubResource("CapsuleShape2D_d2dbh")
 
 [node name="tutorial" type="Control" parent="." unique_id=1910446515]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -113,7 +112,6 @@ offset_bottom = 545.0
 text = "Use arrow keys to move."
 
 [node name="specific" type="Label" parent="tutorial" unique_id=772081188]
-visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 371.0
@@ -124,7 +122,6 @@ text = "Some blocks can only be
 horizontal_alignment = 1
 
 [node name="health" type="Label" parent="tutorial" unique_id=1280606102]
-visible = false
 layout_mode = 0
 offset_left = 407.0
 offset_top = 53.0
@@ -141,7 +138,7 @@ offset_bottom = 48.0
 [node name="tut2" type="Area2D" parent="." unique_id=268114368]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tut2" unique_id=2046204997]
-position = Vector2(272, 390)
+position = Vector2(272, 381)
 shape = SubResource("RectangleShape2D_cqrfi")
 
 [node name="tut3" type="Area2D" parent="." unique_id=123012657]

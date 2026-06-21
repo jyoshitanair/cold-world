@@ -41,7 +41,7 @@ func _process(delta: float) -> void:
 					if Manager.dialog ==3:
 						Manager.text_array = ["lwerwer","owerwerwer","pwerwerwerwer"]
 					if Manager.dialog ==4:
-						get_tree().change_scene_to_file("res://scenes/buffs.tscn")
+						get_tree().change_scene_to_file("res://scenes/buffs1.tscn")
 						return
 					get_tree().change_scene_to_file("res://scenes/intro.tscn")
 					return

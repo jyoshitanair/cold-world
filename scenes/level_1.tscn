@@ -26,7 +26,7 @@ size = Vector2(271, 229)
 size = Vector2(350.5, 284)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pom5n"]
-size = Vector2(201.5, 266)
+size = Vector2(201.5, 218)
 
 [node name="scene_1" type="Node2D" unique_id=395208896]
 script = ExtResource("1_15mv3")
@@ -166,10 +166,11 @@ shape = SubResource("RectangleShape2D_rid7q")
 [node name="tut4" type="Area2D" parent="." unique_id=599509675]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="tut4" unique_id=58316340]
-position = Vector2(416.25, 375)
+position = Vector2(416.25, 351)
 shape = SubResource("RectangleShape2D_pom5n")
 
 [connection signal="body_entered" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_entered"]
+[connection signal="body_exited" from="exit_ladder_1" to="." method="_on_body_exited"]
 [connection signal="body_exited" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_exited"]
 [connection signal="body_entered" from="exit_ladder_2" to="exit_ladder_2" method="_on_body_entered"]
 [connection signal="body_exited" from="exit_ladder_2" to="exit_ladder_2" method="_on_body_exited"]

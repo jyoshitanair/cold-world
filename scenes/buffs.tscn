@@ -128,12 +128,8 @@ layout_mode = 0
 offset_top = 40.0
 offset_right = 202.0
 offset_bottom = 193.0
-text = "loreum leurekljskjf s
-l
-jfkjadfkjkjfk
-;jfkjakdfjdjf ;al
-klajd
-kfjaskdlfj kdljfkasjd"
+text = "jhfsaljdfhkjasdhfjkhdfjkashlfjhdsjkfhajsdlfhjadshfjhdsflkjhdsljkfhjdkfhjkfhkjhfjlakhsdfjkahdjf"
+autowrap_mode = 3
 
 [node name="label2" type="Label" parent="." unique_id=1421955891]
 offset_left = 476.0
@@ -154,6 +150,7 @@ jfkjadfkjkjfk
 ;jfkjakdfjdjf ;al
 klajd
 kfjaskdlfj kdljfkasjd"
+autowrap_mode = 3
 
 [node name="label3" type="Label" parent="." unique_id=888252751]
 offset_left = 852.0
@@ -174,6 +171,7 @@ jfkjadfkjkjfk
 ;jfkjakdfjdjf ;al
 klajd
 kfjaskdlfj kdljfkasjd"
+autowrap_mode = 3
 
 [connection signal="mouse_entered" from="cards-constant/slide1" to="." method="_on_slide_1_mouse_entered"]
 [connection signal="mouse_exited" from="cards-constant/slide1" to="." method="_on_slide_1_mouse_exited"]

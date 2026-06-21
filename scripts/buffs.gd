@@ -41,6 +41,7 @@ kfjaskdlfj kdljfkasjd333"
 @export var power_percent2 = ["speed", false]
 @export var power_percent3 = ["speed", false]
 var arrary_powers 
+#used: speed,jump_multiplier,hot_potato,
 var powerup_array = ["double_or_nothing","speed_multiplier","warmth","jackpot","jump_multiplier", "hot_potato", "double_jump","unity"]
 var on1 = false
 var on2 = false
@@ -56,7 +57,7 @@ func _ready() -> void:
 	image_3.texture = img3
 	label_1.text = text1
 	label_2.text = text2
-	label_3.text = text1
+	label_3.text = text3
 	label1.text = mini_text1
 	label2.text = mini_text2
 	label3.text = mini_text3

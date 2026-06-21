@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bj6qydggv3qev"]
+
+[ext_resource type="PackedScene" uid="uid://c5tplv82p1ylm" path="res://scenes/buffs.tscn" id="1_xat7k"]
+
+[node name="Buffs1" type="Node2D" unique_id=1231346226]
+
+[node name="Buffs" parent="." unique_id=1305887323 instance=ExtResource("1_xat7k")]
+text1 = "Speed Boost"
+text2 = "Hot Potato"
+text3 = "Jump Boost"
+mini_text1 = "Jump higher than ever before! Increases your jump height by 10%!"
+mini_text2 = "You will only have 80% of the overall time... but you will get a score boost of 7%"
+mini_text3 = "Do you want to jump higher? Well this increases your jump height by 7%"
+power_percent1 = ["speed_multiplier", 1.1]
+power_percent2 = ["hot_potato", 1.97]
+power_percent3 = ["jump_multiplier", 1.07]

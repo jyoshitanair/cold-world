@@ -34,7 +34,7 @@ func _ready() -> void:
 	self.max_value = maxHealth
 	
 	if Manager.hot_potato[0]:
-		maxHealth *= 0.9
+		maxHealth *= 0.8
 	health = maxHealth
 	
 	$Timer.start()

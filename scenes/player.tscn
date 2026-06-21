@@ -19,6 +19,7 @@ radius = 40.375
 height = 80.75
 
 [node name="player" type="CharacterBody2D" unique_id=1204618469]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_g2els")
 
 [node name="warmthInd" type="Sprite2D" parent="." unique_id=1639653953]

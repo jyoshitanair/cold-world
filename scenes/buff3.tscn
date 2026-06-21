@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://8fombwmsmw4a"]
 
 [ext_resource type="PackedScene" uid="uid://c5tplv82p1ylm" path="res://scenes/buffs.tscn" id="1_mfml6"]
+[ext_resource type="Texture2D" uid="uid://bn0fdavhvcwhh" path="res://assets/unity.png" id="2_ik0vw"]
+[ext_resource type="Texture2D" uid="uid://ti3wfx2fb6ux" path="res://assets/jackpot.png" id="3_v43lu"]
+[ext_resource type="Texture2D" uid="uid://b3dvkx2otql71" path="res://assets/doubleJump.png" id="4_ppe6q"]
 
 [node name="Buff3" type="Node2D" unique_id=1438245656]
 
 [node name="Buffs" parent="." unique_id=1305887323 instance=ExtResource("1_mfml6")]
+img1 = ExtResource("2_ik0vw")
+img2 = ExtResource("3_v43lu")
+img3 = ExtResource("4_ppe6q")
 text1 = "unity"
 text2 = "jackpot"
 text3 = "double jump"

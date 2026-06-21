@@ -5,13 +5,6 @@ var Health
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Health = get_tree().get_first_node_in_group("health")
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -28,6 +21,8 @@ func _on_body_entered(body: Node2D) -> void:
 			if Manager.current_level == 1:
 				Manager.current_level = 2
 				get_tree().call_deferred("change_scene_to_file", "res://scenes/level_2.tscn")
+				Manager.level_one_calc = max(0, ((45 - Health.health) * 27))
+				print(Manager.level_one_calc)
 			elif Manager.current_level == 2:
 				Manager.current_level = 3
 				get_tree().call_deferred("change_scene_to_file", "res://scenes/level_3.tscn")

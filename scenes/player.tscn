@@ -103,11 +103,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2dbh"]
-radius = 32.375
-height = 80.75
+radius = 28.708332
+height = 72.471016
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4sp5e"]
-size = Vector2(65, 80)
+size = Vector2(65, 78.33333)
 
 [node name="player" type="CharacterBody2D" unique_id=1204618469]
 scale = Vector2(0.6, 0.6)
@@ -123,14 +123,15 @@ texture = ExtResource("1_3vyb7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=416506337]
 scale = Vector2(1.1428572, 1.1428572)
 sprite_frames = SubResource("SpriteFrames_d2dbh")
-animation = &"jelly-run"
+animation = &"jelly-jump"
+frame_progress = 0.55618423
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=620317246]
-position = Vector2(-0.375, 0.43115616)
+position = Vector2(9.624998, 0.43115628)
 shape = SubResource("CapsuleShape2D_d2dbh")
 
 [node name="detect" type="Area2D" parent="." unique_id=1932184325]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detect" unique_id=1016579011]
-position = Vector2(6.5, 1.9073486e-06)
+position = Vector2(6.6666665, -1.6666665)
 shape = SubResource("RectangleShape2D_4sp5e")

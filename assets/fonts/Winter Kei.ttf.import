@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cvkxiu8o7secr"
-path="res://.godot/imported/Winter Kei.ttf-2796f7eb9ffe19d8194222fa756e694b.fontdata"
+path="res://.godot/imported/Winter Kei.ttf-c3a70570910fe7cba849b4e7a5d52abe.fontdata"
 
 [deps]
 
-source_file="res://assets/Winter Kei.ttf"
-dest_files=["res://.godot/imported/Winter Kei.ttf-2796f7eb9ffe19d8194222fa756e694b.fontdata"]
+source_file="res://assets/fonts/Winter Kei.ttf"
+dest_files=["res://.godot/imported/Winter Kei.ttf-c3a70570910fe7cba849b4e7a5d52abe.fontdata"]
 
 [params]
 

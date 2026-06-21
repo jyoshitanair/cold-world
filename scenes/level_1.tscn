@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c3j6ukimtqjy3"]
 
 [ext_resource type="PackedScene" uid="uid://df8xgge2wjrcb" path="res://scenes/tileset-tb-copied!.tscn" id="1_5xbjy"]
+[ext_resource type="Script" uid="uid://dkktfrxjdtx15" path="res://scripts/level_1.gd" id="1_15mv3"]
 [ext_resource type="Texture2D" uid="uid://cpc3k3g5gyy0e" path="res://assets/mountain.png" id="1_pa8r4"]
 [ext_resource type="Texture2D" uid="uid://dlcvs6jxu3qmm" path="res://assets/snow.png" id="2_15mv3"]
 [ext_resource type="Script" uid="uid://tgnolmqrnm7u" path="res://scripts/exit_ladder_1.gd" id="2_fcfvj"]
@@ -18,22 +19,30 @@ size = Vector2(20, 27.424244)
 radius = 40.375
 height = 80.75
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cqrfi"]
+size = Vector2(540, 232)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rid7q"]
+size = Vector2(350.5, 284)
+
 [node name="scene_1" type="Node2D" unique_id=395208896]
+script = ExtResource("1_15mv3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=397694933]
-visible = false
-position = Vector2(573, 373)
+position = Vector2(577, 330.5)
+scale = Vector2(1.0069444, 1.0046296)
 texture = ExtResource("1_pa8r4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=569507132]
-position = Vector2(-4, -45)
+position = Vector2(-8, -23.5)
+scale = Vector2(1.0069444, 1.066358)
 texture = ExtResource("2_15mv3")
 
 [node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=145331879]
-offset_left = -610.0
+offset_left = -716.0
 offset_top = -414.0
-offset_right = 611.0
-offset_bottom = 320.0
+offset_right = 683.0
+offset_bottom = 382.0
 color = Color(0.077418126, 0.108186685, 0.29359287, 0.69411767)
 
 [node name="TilesetTbCopied!" parent="." unique_id=1682306031 instance=ExtResource("1_5xbjy")]
@@ -76,6 +85,7 @@ position = Vector2(-0.375, 0.43115616)
 shape = SubResource("CapsuleShape2D_d2dbh")
 
 [node name="tutorial" type="Control" parent="." unique_id=1910446515]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -98,6 +108,7 @@ offset_bottom = 545.0
 text = "Use arrow keys to move."
 
 [node name="specific" type="Label" parent="tutorial" unique_id=772081188]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 371.0
@@ -108,6 +119,7 @@ text = "Some blocks can only be
 horizontal_alignment = 1
 
 [node name="health" type="Label" parent="tutorial" unique_id=1280606102]
+visible = false
 layout_mode = 0
 offset_left = 407.0
 offset_top = 53.0
@@ -121,10 +133,24 @@ offset_top = 13.0
 offset_right = 865.00006
 offset_bottom = 48.0
 
+[node name="tut2" type="Area2D" parent="." unique_id=268114368]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tut2" unique_id=2046204997]
+position = Vector2(272, 390)
+shape = SubResource("RectangleShape2D_cqrfi")
+
+[node name="tut3" type="Area2D" parent="." unique_id=123012657]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tut3" unique_id=1732184666]
+position = Vector2(745.75, 241)
+shape = SubResource("RectangleShape2D_rid7q")
+
 [connection signal="body_entered" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_entered"]
 [connection signal="body_exited" from="exit_ladder_1" to="exit_ladder_1" method="_on_body_exited"]
 [connection signal="body_entered" from="exit_ladder_2" to="exit_ladder_2" method="_on_body_entered"]
 [connection signal="body_exited" from="exit_ladder_2" to="exit_ladder_2" method="_on_body_exited"]
+[connection signal="body_entered" from="tut2" to="." method="_on_tut_2_body_entered"]
+[connection signal="body_entered" from="tut3" to="." method="_on_tut_3_body_entered"]
 
 [editable path="TilesetTbCopied!"]
 [editable path="player2"]

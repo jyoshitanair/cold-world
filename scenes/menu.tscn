@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cw06dpnlrggbn" path="res://scripts/menu.gd" id="1_yqeox"]
 [ext_resource type="Texture2D" uid="uid://cpc3k3g5gyy0e" path="res://assets/mountain.png" id="2_con2f"]
-[ext_resource type="FontFile" uid="uid://cvkxiu8o7secr" path="res://assets/Winter Kei.ttf" id="2_mhnvy"]
+[ext_resource type="FontFile" uid="uid://cvkxiu8o7secr" path="res://assets/fonts/Winter Kei.ttf" id="2_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://dlcvs6jxu3qmm" path="res://assets/snow.png" id="3_mhnvy"]
 
 [sub_resource type="Theme" id="Theme_y85q1"]

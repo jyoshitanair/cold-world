@@ -42,10 +42,6 @@ func _physics_process(delta: float) -> void:
 		
 	# Add the gravity.
 	if not is_on_floor():
-		if playerLeft:
-			animated_sprite_2d.play("jelly-jump")
-		else:
-			animated_sprite_2d.play("bean-jump")
 		velocity += get_gravity() * delta
 	else:
 		jumped = false
@@ -72,7 +68,11 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-	if direction != 0.0:
+	if not is_on_floor():
+		var jump_anim = "jelly-jump" if playerLeft else "bean-jump"
+		if animated_sprite_2d.animation != jump_anim:
+			animated_sprite_2d.play(jump_anim)
+	elif direction != 0.0:
 		if playerLeft:
 			animated_sprite_2d.play("jelly-run")
 		else:

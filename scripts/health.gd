@@ -6,7 +6,7 @@ var health = maxHealth
 var damage = .1
 var damageMult = 1
 
-var warmthBuff = 1 if Manager.warmth else .9
+var warmthBuff = Manager.warmth[1] if Manager.warmth[0] else 1
 var distBuff:float = 1
 
 var playerLeft:Player
@@ -29,7 +29,7 @@ func loseHealth() -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if Manager.hot_potato:
+	if Manager.hot_potato[0]:
 		maxHealth *= 0.9
 	health = maxHealth
 	
@@ -41,7 +41,7 @@ func _ready() -> void:
 				playerLeft = child
 				pass
 	
-	if not Manager.unity:
+	if not Manager.unity[0]:
 		distBuff = 1
 	
 	pass # Replace with function body.
@@ -49,7 +49,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#print(.55 + playerLeft.warmth/10)
-	if Manager.unity:
+	if Manager.unity[0]:
 		distBuff = min(.55 + playerLeft.warmth / 10, 1)
 	pass
 

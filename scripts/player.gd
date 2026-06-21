@@ -4,12 +4,13 @@ class_name Player extends CharacterBody2D
 @export var playerLeft:bool
 var playerRight:Player
 
+var flip = false
 #manager vars: speedMult, jumpMult, bool: double jump, unity
 
-var speedMult:float = 1.2 if Manager.speed_multiplier[0] else 1
-var jumpMult:float = 1.2 if Manager.jump_multiplier[0] else 1
+var speedMult:float = Manager.speed_multiplier[1] if Manager.speed_multiplier[0] else 1
+var jumpMult:float = Manager.jump_multiplier[1] if Manager.jump_multiplier[0] else 1
 
-var doubleJump = Manager.double_jump
+var doubleJump = Manager.double_jump[1] if Manager.double_jump[0] else false
 var jumped = false
 
 var warmth:float
@@ -57,6 +58,15 @@ func _physics_process(delta: float) -> void:
 		velocity.y = jumpVelocity
 		if not is_on_floor():
 			jumped = true
+			
+	# Handle direction
+	
+	if Input.is_action_just_pressed("player_1_left" if playerLeft else "player_2_left"):
+		flip = true
+	if Input.is_action_just_pressed("player_1_right" if playerLeft else "player_2_right"):
+		flip = false 
+		
+	$AnimatedSprite2D.flip_h = flip
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

@@ -90,7 +90,7 @@ func _on_slide_3_mouse_exited() -> void:
 # i be from 0-2
 func clicky(i) ->void: 
 	print(i)
-	var chosen_power = [false,0.1]
+	var chosen_power = [false,1.0]
 	var percent
 	var name1 = arrary_powers[i]
 	var powerup = name1[0]
@@ -112,7 +112,7 @@ func clicky(i) ->void:
 			if k == "unity" or k == "double_jump":
 				Manager.set(chosen_power,[false,false])
 			else:
-				Manager.set(chosen_power,[false,0.0])
+				Manager.set(chosen_power,[false,1.0])
 	print(chosen_power)
 	print(Manager.get(chosen_power))
 	get_tree().change_scene_to_file("res://scenes/level_1.tscn")

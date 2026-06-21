@@ -2,13 +2,39 @@
 
 [ext_resource type="Script" uid="uid://cl1kkichh6gq2" path="res://scripts/boss_fight.gd" id="1_1tsao"]
 [ext_resource type="PackedScene" uid="uid://df8xgge2wjrcb" path="res://scenes/tileset-tb-copied!.tscn" id="2_6f77m"]
-[ext_resource type="Texture2D" uid="uid://luq258vtismx" path="res://assets/icon.svg" id="3_id8m3"]
+[ext_resource type="Texture2D" uid="uid://cpc3k3g5gyy0e" path="res://assets/mountain.png" id="2_p1w7h"]
+[ext_resource type="Texture2D" uid="uid://dlcvs6jxu3qmm" path="res://assets/snow.png" id="3_ws0lw"]
+[ext_resource type="Texture2D" uid="uid://br2geebvsf02f" path="res://assets/player/1000006306.png" id="5_i7s1g"]
+[ext_resource type="Texture2D" uid="uid://dwsbb3pqf422h" path="res://assets/player/1000006313.png" id="6_xw3kv"]
+[ext_resource type="Texture2D" uid="uid://bpg3ifwynmodf" path="res://assets/Illustration117.png" id="7_i7s1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cqrfi"]
-size = Vector2(127.1348, 125.418365)
+size = Vector2(47.999996, 72.000015)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qscaq"]
+radius = 80.43262
+height = 249.41833
 
 [node name="BossFight" type="Node2D" unique_id=1009343950]
 script = ExtResource("1_1tsao")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1437997582]
+position = Vector2(577, 327)
+scale = Vector2(1.0069444, 1.0154321)
+texture = ExtResource("2_p1w7h")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" unique_id=35068531]
+position = Vector2(-8, -24.3917)
+scale = Vector2(1.0069444, 1.0691103)
+texture = ExtResource("3_ws0lw")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=1764322799]
+offset_left = -716.0
+offset_top = -414.0
+offset_right = 683.0
+offset_bottom = 382.0
+color = Color(0, 0, 0, 0.69411767)
+metadata/_edit_use_anchors_ = true
 
 [node name="TilesetTbCopied!" parent="." unique_id=1682306031 instance=ExtResource("2_6f77m")]
 scale = Vector2(0.3, 0.3)
@@ -20,61 +46,63 @@ tile_map_data = PackedByteArray("AAACAAsAAAAGAAAAAAATAAAAAAAAAAUAAAABAAAAAAAJAAQ
 position = Vector2(-305, 238)
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=168404144]
-position = Vector2(379, 283)
-texture = ExtResource("3_id8m3")
+position = Vector2(401, 313)
+texture = ExtResource("5_i7s1g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=17579332]
-position = Vector2(378.5674, 282.29083)
+position = Vector2(414, 309)
 shape = SubResource("RectangleShape2D_cqrfi")
 
 [node name="Marker2D" type="Marker2D" parent="CharacterBody2D" unique_id=1813151422]
-position = Vector2(472, 281)
+position = Vector2(487, 307)
 
 [node name="player2" type="CharacterBody2D" parent="." unique_id=1912093240]
 position = Vector2(628, 237)
 
 [node name="Sprite2D" type="Sprite2D" parent="player2" unique_id=1509695436]
-position = Vector2(379, 283)
-texture = ExtResource("3_id8m3")
+position = Vector2(346, 312)
+scale = Vector2(-1, 1)
+texture = ExtResource("6_xw3kv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player2" unique_id=784623451]
-position = Vector2(378.5674, 282.29083)
+position = Vector2(336.00003, 313)
 shape = SubResource("RectangleShape2D_cqrfi")
 
 [node name="Marker2D" type="Marker2D" parent="player2" unique_id=139800890]
-position = Vector2(291, 286)
+position = Vector2(276, 308)
 
 [node name="yeti" type="CharacterBody2D" parent="." unique_id=704881557 groups=["yeti"]]
-position = Vector2(186, 235)
+position = Vector2(164, 213)
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="yeti" unique_id=1617544405]
-position = Vector2(379, 283)
-texture = ExtResource("3_id8m3")
+position = Vector2(397, 257)
+scale = Vector2(1.1714284, 1.247619)
+texture = ExtResource("7_i7s1g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="yeti" unique_id=1938101115]
-position = Vector2(378.5674, 282.29083)
-shape = SubResource("RectangleShape2D_cqrfi")
+position = Vector2(392.56738, 260.29083)
+shape = SubResource("CapsuleShape2D_qscaq")
 
 [node name="Area2D" type="Area2D" parent="yeti" unique_id=279958751 groups=["yeti"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="yeti/Area2D" unique_id=276731874]
-position = Vector2(378.5674, 282.29083)
-shape = SubResource("RectangleShape2D_cqrfi")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="yeti/Area2D" unique_id=2073681782]
+position = Vector2(392.56738, 260.29083)
+shape = SubResource("CapsuleShape2D_qscaq")
 
 [node name="Label" type="Label" parent="." unique_id=945638300]
 offset_left = 224.0
-offset_top = 100.0
+offset_top = 105.0
 offset_right = 832.0
-offset_bottom = 159.0
+offset_bottom = 164.0
 theme_override_font_sizes/font_size = 29
 text = "Yeti Health: 100"
 
 [node name="Label2" type="Label" parent="." unique_id=1216081787]
 offset_left = 629.0
-offset_top = 90.0
+offset_top = 105.0
 offset_right = 1031.0
-offset_bottom = 202.0
+offset_bottom = 217.0
 theme_override_font_sizes/font_size = 28
 text = "Total Time: 0"
 

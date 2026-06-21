@@ -20,7 +20,8 @@ func _physics_process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://scenes/buffs.tscn")
 		
 	total_time += delta
-	label_2.text = "Time Elapsed: %d" % total_time
+	var formatted_string: String = "%.2f" % total_time
+	label_2.text = "Time Elapsed: %s" % formatted_string
 	label.text = "Yeti Health: %d" % yeti_health
 
 	if Input.is_action_just_pressed("e"):

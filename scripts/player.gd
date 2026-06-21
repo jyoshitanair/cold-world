@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 @onready var detect: Area2D = $detect
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @export var playerLeft:bool
+var gravity_scale = 1.0
 var playerRight:Player
 var flip = false
 #manager vars: speedMult, jumpMult, bool: double jump, unity
@@ -42,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		
 	# Add the gravity.
 	if not is_on_floor():
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * gravity_scale * delta
 	else:
 		jumped = false
 
@@ -82,11 +83,12 @@ func _physics_process(delta: float) -> void:
 #collisions
 	var collided = move_and_slide()
 	if collided:
-		for i in range(get_slide_collision_count()):
-			var collision = get_slide_collision(i)
-			var collider = collision.get_collider()
-			if collider.is_in_group("tileset"):
-				var collision_point = collision.get_position()
-				var collision_normal = collision.get_normal()
-				var final = collider.local_to_map(collider.to_local(collision_point - collision_normal*4))
-				collider.check_tile(final)
+		if is_in_group("jelly"):
+			for i in range(get_slide_collision_count()):
+				var collision = get_slide_collision(i)
+				var collider = collision.get_collider()
+				if collider.is_in_group("tileset"):
+					var collision_point = collision.get_position()
+					var collision_normal = collision.get_normal()
+					var final = collider.local_to_map(collider.to_local(collision_point - collision_normal*4))
+					collider.check_tile(final,self)

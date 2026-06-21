@@ -32,7 +32,7 @@ enabled=PackedStringArray("res://addons/silent_wolf/plugin.cfg")
 
 [gui]
 
-theme/custom_font="uid://dqpuhqmg2sci2"
+theme/custom_font="uid://dhc65i3nq4rvj"
 
 [input]
 
